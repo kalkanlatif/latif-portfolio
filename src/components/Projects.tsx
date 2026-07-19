@@ -31,7 +31,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="mx-auto max-w-[1200px] border-t border-border px-12 pt-10 pb-14"
+      className="border-t border-border px-12 pt-10 pb-14"
     >
       <div className="mb-[18px] font-mono text-[10.5px] tracking-[0.12em] text-muted uppercase">
         Projekte

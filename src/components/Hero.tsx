@@ -2,7 +2,7 @@ import LiveClock from "@/components/LiveClock";
 
 export default function Hero() {
   return (
-    <section className="mx-auto max-w-[1080px] px-12 pt-[52px] pb-10">
+    <section className="px-12 pt-[52px] pb-10">
       <div className="mb-[18px]">
         <LiveClock />
       </div>
