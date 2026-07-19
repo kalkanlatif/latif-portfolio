@@ -4,7 +4,7 @@ import Modal from "@/components/Modal";
 
 export default function ResumeCard() {
   return (
-    <div className="max-w-[1200px] px-12 pt-10">
+    <div className="mx-auto max-w-[1200px] px-12 pt-10">
       <Modal
         title="Lebenslauf"
         wide

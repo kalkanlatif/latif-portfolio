@@ -115,7 +115,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="max-w-[1200px] border-t border-border px-12 pt-10 pb-14"
+      className="mx-auto max-w-[1200px] border-t border-border px-12 pt-10 pb-14"
     >
       <div className="mb-[18px] font-mono text-[10.5px] tracking-[0.12em] text-muted uppercase">
         Kenntnisse
