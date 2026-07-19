@@ -10,7 +10,7 @@ export default function ResumeCard() {
       trigger={
         <button
           type="button"
-          className="inline-flex items-center gap-2 rounded-pill border border-ink px-[26px] py-3 font-mono text-[11.5px] uppercase tracking-[0.08em] text-ink transition-colors hover:bg-ink hover:text-page"
+          className="inline-flex items-center gap-2 rounded-pill bg-accent px-[26px] py-3 font-mono text-[11.5px] uppercase tracking-[0.08em] text-white transition-colors hover:bg-accent-hover"
         >
           <svg
             width="14"
