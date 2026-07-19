@@ -135,7 +135,7 @@ export default function Experience() {
       id="experience"
       className="max-w-[1200px] border-t border-border px-12 pt-10 pb-14"
     >
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.4fr_1fr]">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[40%_40%] lg:gap-x-[20%]">
         <div>
           <div className="mb-[18px] font-mono text-[10.5px] tracking-[0.12em] text-muted uppercase">
             Berufserfahrung
