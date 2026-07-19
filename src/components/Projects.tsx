@@ -1,10 +1,4 @@
-function TagPill({ children }: { children: string }) {
-  return (
-    <span className="rounded-pill border border-border bg-page px-[11px] py-[5px] font-mono text-[9.5px] tracking-[0.03em] text-ink">
-      {children}
-    </span>
-  );
-}
+import TagPill from "@/components/TagPill";
 
 const projects = [
   {

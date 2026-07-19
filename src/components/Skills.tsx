@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import TagPill from "@/components/TagPill";
 
 const iconProps = {
   width: 16,
@@ -10,14 +10,6 @@ const iconProps = {
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
 };
-
-function Pill({ children }: { children: ReactNode }) {
-  return (
-    <span className="rounded-pill bg-card-dark px-3.5 py-1.5 font-mono text-[10.5px] tracking-[0.03em] text-accent-bright">
-      {children}
-    </span>
-  );
-}
 
 const skillGroups = [
   {
@@ -118,7 +110,7 @@ export default function Skills() {
       className="border-t border-border px-12 pt-10 pb-14"
     >
       <div className="mb-4 font-display text-2xl font-bold text-accent">
-        Kenntnisse
+        Tech-Stack &amp; Erfahrung
       </div>
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-3.5">
@@ -135,7 +127,7 @@ export default function Skills() {
             </div>
             <div className="flex flex-wrap gap-1.5">
               {group.items.map((item) => (
-                <Pill key={item}>{item}</Pill>
+                <TagPill key={item}>{item}</TagPill>
               ))}
             </div>
           </div>
