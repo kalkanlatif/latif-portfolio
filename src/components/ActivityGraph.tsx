@@ -45,70 +45,80 @@ const activityCells = buildActivityCells();
 
 export default function ActivityGraph() {
   return (
-    <div className="ml-auto w-full max-w-md overflow-hidden rounded-card border border-border bg-card p-4">
-      <div className="mb-3 flex items-center gap-2.5">
-        <div className="flex h-7 w-7 items-center justify-center rounded-pill bg-accent font-display text-xs font-bold text-white">
-          LK
-        </div>
-        <div>
-          <div className="font-display text-[13px] font-semibold text-ink">
-            Latif Kalkan
+    <div className="ml-auto w-full max-w-md">
+      <div className="overflow-hidden rounded-card border border-border bg-card p-4">
+        <div className="mb-3 flex items-center gap-2.5">
+          <div className="flex h-7 w-7 items-center justify-center rounded-pill bg-accent font-display text-xs font-bold text-white">
+            LK
           </div>
-          <div className="font-mono text-[10px] text-muted">@latif</div>
-        </div>
-      </div>
-
-      <div
-        style={{
-          maskImage:
-            "linear-gradient(to right, transparent 0%, black 55%, black 100%)",
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent 0%, black 55%, black 100%)",
-        }}
-      >
-        <div className="mb-1 flex pl-[20px]">
-          {MONTH_LABELS.map((m, i) => (
-            <span
-              key={`${m.name}-${i}`}
-              style={{ flex: `${m.weeks} 0 0` }}
-              className="overflow-hidden font-mono text-[8.5px] text-muted"
-            >
-              {m.name}
-            </span>
-          ))}
+          <div>
+            <div className="font-display text-[13px] font-semibold text-ink">
+              Latif Kalkan
+            </div>
+            <div className="font-mono text-[10px] text-muted">@latif</div>
+          </div>
         </div>
 
-        <div className="flex gap-1.5">
-          <div className="flex h-[60px] flex-col justify-between py-0.5">
-            <span className="font-mono text-[8px] text-muted">M</span>
-            <span className="font-mono text-[8px] text-muted">W</span>
-            <span className="font-mono text-[8px] text-muted">F</span>
-          </div>
-          <div className="grid flex-1 grid-flow-col grid-rows-7 gap-[2px]">
-            {activityCells.map((color, i) => (
-              <div
-                key={i}
-                className="aspect-square w-full rounded-cell"
-                style={{ background: color }}
-              />
+        <div
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent 0%, black 55%, black 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, black 55%, black 100%)",
+          }}
+        >
+          <div className="mb-1 flex pl-[20px]">
+            {MONTH_LABELS.map((m, i) => (
+              <span
+                key={`${m.name}-${i}`}
+                style={{ flex: `${m.weeks} 0 0` }}
+                className="overflow-hidden font-mono text-[8.5px] text-muted"
+              >
+                {m.name}
+              </span>
             ))}
           </div>
-        </div>
-      </div>
 
-      <div className="mt-2.5 flex items-center gap-1">
-        <span className="font-mono text-[8px] text-muted">Less</span>
-        {SHADES.map((color) => (
-          <div
-            key={color}
-            className="h-1.5 w-1.5 rounded-cell"
-            style={{ background: color }}
-          />
-        ))}
-        <span className="font-mono text-[8px] text-muted">More</span>
+          <div className="flex gap-1.5">
+            <div className="flex h-[60px] flex-col justify-between py-0.5">
+              <span className="font-mono text-[8px] text-muted">M</span>
+              <span className="font-mono text-[8px] text-muted">W</span>
+              <span className="font-mono text-[8px] text-muted">F</span>
+            </div>
+            <div className="grid flex-1 grid-flow-col grid-rows-7 gap-[2px]">
+              {activityCells.map((color, i) => (
+                <div
+                  key={i}
+                  className="aspect-square w-full rounded-cell"
+                  style={{ background: color }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-2.5 flex items-center gap-1">
+          <span className="font-mono text-[8px] text-muted">Less</span>
+          {SHADES.map((color) => (
+            <div
+              key={color}
+              className="h-1.5 w-1.5 rounded-cell"
+              style={{ background: color }}
+            />
+          ))}
+          <span className="font-mono text-[8px] text-muted">More</span>
+        </div>
+        <p className="mt-1.5 font-mono text-[8px] text-muted">
+          GitLab- und Git-Aktivität — Commits, Merge Requests, Issues.
+        </p>
       </div>
-      <p className="mt-1.5 font-mono text-[8px] text-muted">
-        GitLab- und Git-Aktivität — Commits, Merge Requests, Issues.
+      <p className="mt-8 font-body text-sm leading-[1.6] text-muted italic">
+        Fachinformatiker-Azubi (Anwendungsentwicklung) mit rund 15 Monaten
+        Berufserfahrung als Junior Developer vor der Ausbildung —
+        Backend-Entwicklung mit Next.js, TypeScript und Supabase, mit
+        produktiv eingesetzten Beiträgen zu KI-Agenten-Pipelines. Zuvor
+        Erfahrung in der industriellen Automatisierung mit C, GTK und
+        EtherCAT/PLC-Integration.
       </p>
     </div>
   );
