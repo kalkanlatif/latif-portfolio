@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import NavCards from "@/components/NavCards";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         />
       </div>
       <Hero />
+      <NavCards />
     </>
   );
 }
