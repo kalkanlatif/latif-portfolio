@@ -5,6 +5,7 @@ import ActivityGraph from "@/components/ActivityGraph";
 import AboutBlurb from "@/components/AboutBlurb";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
+import ClaudeSkills from "@/components/ClaudeSkills";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
 
@@ -29,6 +30,7 @@ export default function Home() {
       <Hero />
       <Experience />
       <Skills />
+      <ClaudeSkills />
       <Projects />
       <Footer />
     </>
