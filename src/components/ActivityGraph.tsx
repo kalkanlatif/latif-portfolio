@@ -45,7 +45,7 @@ const activityCells = buildActivityCells();
 
 export default function ActivityGraph() {
   return (
-    <div className="ml-auto w-full max-w-md">
+    <div>
       <div className="overflow-hidden rounded-card border border-border bg-card p-4">
         <div className="mb-3 flex items-center gap-2.5">
           <div className="flex h-7 w-7 items-center justify-center rounded-pill bg-accent font-display text-xs font-bold text-white">
@@ -112,14 +112,6 @@ export default function ActivityGraph() {
           GitLab- und Git-Aktivität — Commits, Merge Requests, Issues.
         </p>
       </div>
-      <p className="mt-8 font-body text-sm leading-[1.6] text-muted italic">
-        Fachinformatiker-Azubi (Anwendungsentwicklung) mit rund 15 Monaten
-        Berufserfahrung als Junior Developer vor der Ausbildung —
-        Backend-Entwicklung mit Next.js, TypeScript und Supabase, mit
-        produktiv eingesetzten Beiträgen zu KI-Agenten-Pipelines. Zuvor
-        Erfahrung in der industriellen Automatisierung mit C, GTK und
-        EtherCAT/PLC-Integration.
-      </p>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import ActivityGraph from "@/components/ActivityGraph";
+import AboutBlurb from "@/components/AboutBlurb";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
@@ -11,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <div className="flex flex-wrap items-start gap-6 px-12 pt-8">
+      <div className="relative px-12 pt-8">
         <Image
           src="/cover.png"
           alt="Latif Kalkan"
@@ -20,7 +21,10 @@ export default function Home() {
           className="rounded-card object-cover"
           priority
         />
-        <ActivityGraph />
+        <div className="absolute top-8 right-12 w-full max-w-md">
+          <ActivityGraph />
+          <AboutBlurb />
+        </div>
       </div>
       <Hero />
       <Experience />
