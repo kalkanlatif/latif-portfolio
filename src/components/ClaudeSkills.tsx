@@ -25,48 +25,72 @@ const skills = [
   },
 ];
 
+const folderIcon = (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+  </svg>
+);
+
+const fileIcon = (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+    <polyline points="14 2 14 8 20 8" />
+  </svg>
+);
+
 const folders = [
   {
     name: "skills/",
     type: "dir" as const,
     de: "Wiederverwendbare Workflows",
-    en: "Reusable workflows",
   },
   {
     name: "rules/",
     type: "dir" as const,
     de: "Pfad-getriggerte Konventionen",
-    en: "Path-scoped conventions",
   },
   {
     name: "context/",
     type: "dir" as const,
     de: "Projektwissen",
-    en: "Project knowledge",
   },
   {
     name: "hooks/",
     type: "dir" as const,
     de: "Automatisierte Guards",
-    en: "Automated guards",
   },
   {
     name: "agents/",
     type: "dir" as const,
     de: "Spezialisierte Subagenten",
-    en: "Specialized subagents",
   },
   {
     name: "commands/",
     type: "dir" as const,
     de: "Slash-Commands",
-    en: "Slash commands",
   },
   {
     name: "settings.json",
     type: "file" as const,
     de: "Hook-Verdrahtung & Berechtigungen",
-    en: "Hook wiring & permissions",
   },
 ];
 
@@ -141,21 +165,23 @@ export default function ClaudeSkills() {
         <div className="mb-5 font-mono text-xs tracking-[0.08em] text-muted uppercase">
           .claude/ — Architecture
         </div>
-        <div className="flex flex-col gap-2.5 font-mono text-base">
-          <div className="text-ink">.claude/</div>
-          {folders.map((folder, i) => (
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3.5">
+          {folders.map((folder) => (
             <div
               key={folder.name}
-              className="flex flex-wrap items-baseline gap-x-3 gap-y-1 pl-2"
+              className="rounded-card border border-border bg-card px-5 py-4"
             >
-              <span className="text-muted">
-                {i === folders.length - 1 ? "└──" : "├──"}
-              </span>
-              <span className="text-accent">{folder.name}</span>
-              <span className="text-muted">→</span>
-              <span className="font-body text-sm text-muted normal-case">
-                {folder.de} · {folder.en}
-              </span>
+              <div className="mb-2.5 flex items-center gap-2.5">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-pill bg-page text-accent">
+                  {folder.type === "dir" ? folderIcon : fileIcon}
+                </div>
+                <span className="font-mono text-[13px] font-semibold text-ink">
+                  {folder.name}
+                </span>
+              </div>
+              <p className="font-body text-[12.5px] leading-[1.5] text-muted">
+                {folder.de}
+              </p>
             </div>
           ))}
         </div>
