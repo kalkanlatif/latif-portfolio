@@ -2,7 +2,25 @@ export default function Nav() {
   return (
     <header className="flex items-center justify-between border-b border-border px-12 py-[18px]">
       <span className="font-display text-lg font-bold">Latif Kalkan</span>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-7">
+        <a
+          href="#cards"
+          className="font-mono text-[10.5px] tracking-[0.1em] text-ink uppercase"
+        >
+          Profil
+        </a>
+        <a
+          href="#projects"
+          className="font-mono text-[10.5px] tracking-[0.1em] text-ink uppercase"
+        >
+          Projekte
+        </a>
+        <a
+          href="#contact"
+          className="font-mono text-[10.5px] tracking-[0.1em] text-ink uppercase"
+        >
+          Kontakt
+        </a>
         <a
           href="https://github.com/"
           target="_blank"
