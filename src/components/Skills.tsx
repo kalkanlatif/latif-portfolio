@@ -186,26 +186,27 @@ export default function Skills() {
           {certificates.map((cert) => (
             <div
               key={cert.issuer + cert.name}
-              className="flex aspect-square flex-col items-start gap-2 rounded-card bg-card-dark p-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.5)]"
+              className="flex aspect-square flex-col rounded-card bg-card-dark p-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.5)]"
             >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#a3e635"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="shrink-0"
-              >
-                <circle cx="12" cy="8" r="6" />
-                <path d="M8.7 13.5 7 22l5-3 5 3-1.7-8.5" />
-              </svg>
+              <div className="flex flex-1 items-center justify-center">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#a3e635"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M8.7 13.5 7 22l5-3 5 3-1.7-8.5" />
+                </svg>
+              </div>
               <div className="font-mono text-[10px] tracking-[0.06em] text-accent-bright uppercase">
                 {cert.issuer}
               </div>
-              <div className="line-clamp-4 font-body text-[13px] leading-[1.4] text-on-dark">
+              <div className="line-clamp-3 font-body text-[13px] leading-[1.4] text-on-dark">
                 {cert.name}
               </div>
             </div>
