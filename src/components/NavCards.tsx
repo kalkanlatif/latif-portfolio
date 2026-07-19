@@ -23,14 +23,6 @@ function Pill({ children }: { children: ReactNode }) {
   );
 }
 
-function TagPill({ children }: { children: ReactNode }) {
-  return (
-    <span className="rounded-pill border border-border bg-page px-[11px] py-[5px] font-mono text-[9.5px] tracking-[0.03em] text-ink">
-      {children}
-    </span>
-  );
-}
-
 const experience = [
   {
     company: "Vate GmbH (Photovate)",
@@ -73,27 +65,6 @@ const experience = [
     period: "03/2021–09/2022",
     meta: "Empfang, Reservierungen, Kundenservice",
     bullets: [],
-  },
-];
-
-const projects = [
-  {
-    name: "Kalkan Stundenzettel",
-    description:
-      "Web-App zur Arbeitszeiterfassung mit PDF-Export — live im Einsatz. Von der Eingabe der Arbeitszeiten bis zum fertigen, exportierbaren Stundenzettel.",
-    tags: ["Next.js", "Supabase", "Vercel"],
-  },
-  {
-    name: "TimerNova",
-    description:
-      "Next.js-Anwendung mit automatisiertem Deployment-Workflow über GitHub Actions und Docker-Containerisierung für konsistente Umgebungen.",
-    tags: ["Next.js", "Supabase", "Docker", "GitHub Actions"],
-  },
-  {
-    name: "migrant-compass",
-    description:
-      "KI-gestützte, mehrsprachige Anwendung mit dem Anthropic AI SDK — zeigt praktische Erfahrung darin, LLM-Funktionalität sauber in ein produktives Next.js/Supabase-Setup zu integrieren.",
-    tags: ["Next.js", "Anthropic AI SDK", "Supabase", "next-intl"],
   },
 ];
 
@@ -184,39 +155,6 @@ export default function NavCards() {
                     ))}
                   </ul>
                 )}
-              </div>
-            ))}
-          </div>
-        </Modal>
-
-        <Modal
-          title="Projekte"
-          trigger={
-            <Card
-              title="Projekte"
-              description="Kalkan Stundenzettel, TimerNova, migrant-compass — drei live eingesetzte Anwendungen."
-              icon={
-                <svg {...iconProps}>
-                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
-                </svg>
-              }
-            />
-          }
-        >
-          <div className="flex flex-col gap-5">
-            {projects.map((project) => (
-              <div key={project.name}>
-                <div className="font-display text-sm font-semibold">
-                  {project.name}
-                </div>
-                <p className="mt-2 font-body text-[12.5px] leading-[1.5] text-muted">
-                  {project.description}
-                </p>
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  {project.tags.map((tag) => (
-                    <TagPill key={tag}>{tag}</TagPill>
-                  ))}
-                </div>
               </div>
             ))}
           </div>
@@ -322,38 +260,6 @@ export default function NavCards() {
                 Gymnasium/Abitur)
               </p>
             </div>
-          </div>
-        </Modal>
-
-        <Modal
-          title="Kontakt"
-          trigger={
-            <Card
-              title="Kontakt"
-              description="Fragen, Angebote, Feedback — schreib mir direkt."
-              icon={
-                <svg {...iconProps}>
-                  <rect x="2" y="4" width="20" height="16" rx="2" />
-                  <polyline points="2 7 12 13 22 7" />
-                </svg>
-              }
-            />
-          }
-        >
-          <div className="flex flex-col gap-3">
-            <a
-              href="mailto:kalkanlatif818@gmail.com"
-              className="font-mono text-sm text-accent"
-            >
-              kalkanlatif818@gmail.com
-            </a>
-            <p className="font-mono text-[10.5px] tracking-[0.04em] text-muted uppercase">
-              Mannheim
-            </p>
-            <p className="font-body text-[12px] text-muted">
-              Kontaktformular folgt, sobald die Supabase-Anbindung steht —
-              bis dahin gerne direkt per E-Mail.
-            </p>
           </div>
         </Modal>
 

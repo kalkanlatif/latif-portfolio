@@ -23,7 +23,7 @@ export default function Hero() {
 
       <div className="flex flex-wrap gap-3">
         <a
-          href="#cards"
+          href="#projects"
           className="inline-flex items-center gap-2 rounded-pill bg-card-dark px-[26px] py-[13px] font-mono text-[11.5px] uppercase tracking-[0.08em] text-accent-bright transition-colors hover:bg-[#1c2417]"
         >
           <svg
@@ -44,7 +44,7 @@ export default function Hero() {
           Projekte ansehen ↗
         </a>
         <a
-          href="#cards"
+          href="#contact"
           className="inline-flex items-center gap-2 rounded-pill border border-ink px-[26px] py-3 font-mono text-[11.5px] uppercase tracking-[0.08em] text-ink transition-colors hover:bg-ink hover:text-page"
         >
           <svg
