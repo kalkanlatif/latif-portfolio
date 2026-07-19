@@ -165,12 +165,12 @@ export default function Skills() {
           {languages.map((lang) => (
             <div
               key={lang.name}
-              className="rounded-card bg-card-dark px-5 py-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.5)]"
+              className="rounded-card border border-border bg-card px-5 py-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.15)]"
             >
-              <div className="font-display text-base font-semibold text-on-dark">
+              <div className="font-display text-base font-semibold text-ink">
                 {lang.name}
               </div>
-              <div className="mt-1 font-mono text-[11px] tracking-[0.03em] text-accent-bright uppercase">
+              <div className="mt-1 font-mono text-[11px] tracking-[0.03em] text-accent uppercase">
                 {lang.level}
               </div>
             </div>
@@ -182,11 +182,11 @@ export default function Skills() {
         <div className="mb-4 font-display text-2xl font-bold text-accent">
           Zertifikate
         </div>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-3.5">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] gap-3.5">
           {certificates.map((cert) => (
             <div
               key={cert.issuer + cert.name}
-              className="flex items-start gap-3 rounded-card bg-card-dark px-5 py-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.5)]"
+              className="flex aspect-square flex-col items-start gap-2 rounded-card bg-card-dark p-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.5)]"
             >
               <svg
                 width="18"
@@ -197,18 +197,16 @@ export default function Skills() {
                 strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="mt-0.5 shrink-0"
+                className="shrink-0"
               >
                 <circle cx="12" cy="8" r="6" />
                 <path d="M8.7 13.5 7 22l5-3 5 3-1.7-8.5" />
               </svg>
-              <div>
-                <div className="font-mono text-[10px] tracking-[0.06em] text-accent-bright uppercase">
-                  {cert.issuer}
-                </div>
-                <div className="mt-1 font-body text-[13px] leading-[1.4] text-on-dark">
-                  {cert.name}
-                </div>
+              <div className="font-mono text-[10px] tracking-[0.06em] text-accent-bright uppercase">
+                {cert.issuer}
+              </div>
+              <div className="line-clamp-4 font-body text-[13px] leading-[1.4] text-on-dark">
+                {cert.name}
               </div>
             </div>
           ))}
