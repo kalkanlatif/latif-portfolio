@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Education from "@/components/Education";
 
 const briefcaseIcon = (
   <svg
@@ -75,7 +76,6 @@ const experience: {
   bullets: string[];
   icon: ReactNode;
   badgeClass: string;
-  variant: "dark" | "light";
 }[] = [
   {
     company: "Vate GmbH (Photovate)",
@@ -90,7 +90,6 @@ const experience: {
     ],
     icon: briefcaseIcon,
     badgeClass: "bg-accent-bright text-card-dark",
-    variant: "dark",
   },
   {
     company: "Liqwotec Systems GmbH",
@@ -105,7 +104,6 @@ const experience: {
     ],
     icon: chipIcon,
     badgeClass: "bg-[#1f7a7a] text-white",
-    variant: "light",
   },
   {
     company: "Predicom Solutions GmbH",
@@ -119,7 +117,6 @@ const experience: {
     ],
     icon: wrenchIcon,
     badgeClass: "bg-accent text-white",
-    variant: "light",
   },
   {
     company: "Süral Resort Hotel, Antalya",
@@ -128,8 +125,7 @@ const experience: {
     meta: "Empfang, Reservierungen, Kundenservice",
     bullets: [],
     icon: bellIcon,
-    badgeClass: "bg-border text-muted",
-    variant: "light",
+    badgeClass: "bg-border text-ink",
   },
 ];
 
@@ -139,57 +135,78 @@ export default function Experience() {
       id="experience"
       className="max-w-[1200px] border-t border-border px-12 pt-10 pb-14"
     >
-      <div className="mb-[18px] font-mono text-[10.5px] tracking-[0.12em] text-muted uppercase">
-        Berufserfahrung
-      </div>
-      <div className="flex flex-col gap-4">
-        {experience.map((entry) => {
-          const isDark = entry.variant === "dark";
-          return (
-            <div
-              key={entry.company}
-              className={`rounded-card border px-6 py-5 ${
-                isDark
-                  ? "border-transparent bg-card-dark"
-                  : "border-border bg-card"
-              }`}
-            >
-              <div className="flex items-start gap-4">
-                <div
-                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-pill ${entry.badgeClass}`}
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.4fr_1fr]">
+        <div>
+          <div className="mb-[18px] font-mono text-[10.5px] tracking-[0.12em] text-muted uppercase">
+            Berufserfahrung
+          </div>
+          <div className="flex flex-col gap-4">
+            {experience.map((entry) => {
+              const header = (
+                <div className="flex flex-1 items-start gap-4">
+                  <div
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-pill ${entry.badgeClass}`}
+                  >
+                    {entry.icon}
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-display text-base font-semibold">
+                      {entry.company}
+                    </div>
+                    <div className="mt-1 font-mono text-[10.5px] tracking-[0.04em] text-muted uppercase">
+                      {entry.role} · {entry.period}
+                    </div>
+                    <p className="mt-1 font-body text-[12px] text-muted italic">
+                      {entry.meta}
+                    </p>
+                  </div>
+                </div>
+              );
+
+              if (entry.bullets.length === 0) {
+                return (
+                  <div
+                    key={entry.company}
+                    className="rounded-card border border-border bg-card px-6 py-5"
+                  >
+                    {header}
+                  </div>
+                );
+              }
+
+              return (
+                <details
+                  key={entry.company}
+                  className="group rounded-card border border-border bg-card px-6 py-5"
                 >
-                  {entry.icon}
-                </div>
-                <div className="flex-1">
-                  <div
-                    className={`font-display text-base font-semibold ${isDark ? "text-on-dark" : "text-ink"}`}
-                  >
-                    {entry.company}
-                  </div>
-                  <div
-                    className={`mt-1 font-mono text-[10.5px] tracking-[0.04em] uppercase ${isDark ? "text-on-dark-muted" : "text-muted"}`}
-                  >
-                    {entry.role} · {entry.period}
-                  </div>
-                  <p
-                    className={`mt-1 font-body text-[12px] italic ${isDark ? "text-on-dark-muted" : "text-muted"}`}
-                  >
-                    {entry.meta}
-                  </p>
-                  {entry.bullets.length > 0 && (
-                    <ul
-                      className={`mt-3 list-disc space-y-1.5 pl-4 font-body text-[12.5px] leading-[1.5] ${isDark ? "text-on-dark-muted" : "text-muted"}`}
+                  <summary className="flex cursor-pointer list-none items-start gap-4 marker:content-none [&::-webkit-details-marker]:hidden">
+                    {header}
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="mt-1 shrink-0 text-muted transition-transform group-open:rotate-90"
                     >
-                      {entry.bullets.map((bullet) => (
-                        <li key={bullet}>{bullet}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
-            </div>
-          );
-        })}
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                  </summary>
+                  <ul className="mt-3 list-disc space-y-1.5 pl-[3.5rem] font-body text-[12.5px] leading-[1.5] text-muted">
+                    {entry.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                </details>
+              );
+            })}
+          </div>
+        </div>
+
+        <Education />
       </div>
     </section>
   );

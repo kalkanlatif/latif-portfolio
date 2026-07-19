@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono, Inter } from "next/font/google";
-import ScrollBackground from "@/components/ScrollBackground";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -38,7 +37,6 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} ${inter.variable} antialiased`}
       >
-        <ScrollBackground />
         {children}
       </body>
     </html>
