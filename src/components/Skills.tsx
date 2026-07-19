@@ -1,4 +1,10 @@
-import TagPill from "@/components/TagPill";
+function TechPill({ children }: { children: string }) {
+  return (
+    <span className="rounded-pill bg-accent-bright px-3 py-[6px] font-mono text-[10.5px] tracking-[0.02em] text-card-dark">
+      {children}
+    </span>
+  );
+}
 
 const iconProps = {
   width: 16,
@@ -113,15 +119,15 @@ export default function Skills() {
         Tech-Stack &amp; Erfahrung
       </div>
 
-      <div className="overflow-hidden rounded-card border border-border bg-card">
+      <div className="overflow-hidden rounded-card border border-border bg-[#eaf7dd]">
         <div className="grid grid-cols-[minmax(160px,220px)_1fr]">
           <div className="border-b-2 border-accent px-6 py-3">
-            <span className="font-mono text-[10px] tracking-[0.08em] text-accent uppercase">
+            <span className="font-mono text-[10px] tracking-[0.08em] text-ink uppercase">
               Kategorie
             </span>
           </div>
-          <div className="border-b-2 border-accent border-l border-border px-6 py-3">
-            <span className="font-mono text-[10px] tracking-[0.08em] text-accent uppercase">
+          <div className="border-b-2 border-accent border-l border-border/60 px-6 py-3">
+            <span className="font-mono text-[10px] tracking-[0.08em] text-ink uppercase">
               Technologien
             </span>
           </div>
@@ -129,8 +135,8 @@ export default function Skills() {
         {skillGroups.map((group, i) => (
           <div
             key={group.category}
-            className={`grid grid-cols-[minmax(160px,220px)_1fr] transition-colors hover:bg-page ${
-              i !== 0 ? "border-t border-border" : ""
+            className={`grid grid-cols-[minmax(160px,220px)_1fr] transition-colors hover:bg-[#dcf2c6] ${
+              i !== 0 ? "border-t border-border/60" : ""
             }`}
           >
             <div className="flex items-center gap-[9px] px-6 py-4">
@@ -139,9 +145,9 @@ export default function Skills() {
                 {group.category}
               </span>
             </div>
-            <div className="flex flex-wrap items-center gap-1.5 border-l border-border px-6 py-4">
+            <div className="flex flex-wrap items-center gap-1.5 border-l border-border/60 px-6 py-4">
               {group.items.map((item) => (
-                <TagPill key={item}>{item}</TagPill>
+                <TechPill key={item}>{item}</TechPill>
               ))}
             </div>
           </div>
