@@ -5,28 +5,23 @@ import { useEffect, useState } from "react";
 const skills = [
   {
     name: "deep-task-prep",
-    de: "Context-First-Vorbereitung — sammelt Recherche, Design-/Schema-Referenzen und Code-Patterns vor dem ersten Code und zerlegt die Arbeit in atomare Schritte.",
-    en: "Context-first preparation — gathers research, design/schema references and code patterns before any code and slices the work into atomic steps.",
+    de: "Context-First-Vorbereitung — sammelt Referenzen und Patterns vor dem Code, zerlegt Arbeit in atomare Schritte.",
   },
   {
     name: "fix-issue",
-    de: "Minimal-Fix-Bugdisziplin — verstehen, eingrenzen, planen, minimal beheben, verifizieren; kein unbezogenes Refactoring.",
-    en: "Minimal-fix bug discipline — understand, isolate, plan, fix minimally, verify; no unrelated refactoring.",
+    de: "Minimal-Fix-Disziplin — verstehen, eingrenzen, minimal beheben, verifizieren. Kein unbezogenes Refactoring.",
   },
   {
     name: "review-changes",
-    de: "Self-Review vor jedem Commit — prüft Typsicherheit, Übersetzungen, Sicherheit und Debug-Reste per Checkliste.",
-    en: "Self-review before every commit — checks type safety, translations, security and leftover debug code against a checklist.",
+    de: "Self-Review vor jedem Commit — prüft Typsicherheit, Sicherheit und Debug-Reste.",
   },
   {
     name: "create-module",
-    de: "Pattern-basiertes Scaffolding — erzeugt neue Module entlang bestehender Muster statt auf der grünen Wiese.",
-    en: "Pattern-based scaffolding — creates new modules along existing patterns rather than from scratch.",
+    de: "Pattern-basiertes Scaffolding — neue Module entlang bestehender Muster, nicht auf der grünen Wiese.",
   },
   {
     name: "pr-prep",
-    de: "Quality-Gate vor jedem Merge Request — Type-Check, Linting und aussagekräftige MR-Beschreibung als fester Durchlauf.",
-    en: "Quality gate before every merge request — type-check, linting and a meaningful MR description as a fixed pass.",
+    de: "Quality-Gate vor jedem Merge Request — Type-Check, Linting, aussagekräftige Beschreibung.",
   },
 ];
 
@@ -92,11 +87,11 @@ export default function ClaudeSkills() {
       id="claude-skills"
       className="border-t border-border px-12 pt-10 pb-14"
     >
-      <div className="mb-8 font-display text-2xl font-bold text-accent">
+      <div className="mb-10 font-display text-3xl font-bold text-accent">
         Claude Skills
       </div>
 
-      <div className="relative mb-4 h-[2px] w-full bg-border">
+      <div className="relative mb-6 h-[3px] w-full bg-border">
         <div
           className="absolute top-0 left-0 h-full bg-accent-bright transition-all duration-700 ease-in-out"
           style={{ width: `${progress}%` }}
@@ -107,7 +102,7 @@ export default function ClaudeSkills() {
             return (
               <div
                 key={skill.name}
-                className={`h-4 w-4 rounded-full border-2 transition-all duration-500 ${
+                className={`h-6 w-6 rounded-full border-[3px] transition-all duration-500 ${
                   isActive
                     ? "scale-125 border-accent-bright bg-accent-bright"
                     : i < active
@@ -120,11 +115,11 @@ export default function ClaudeSkills() {
         </div>
       </div>
 
-      <div className="mb-12 flex justify-between">
+      <div className="mb-16 flex justify-between">
         {skills.map((skill, i) => (
           <span
             key={skill.name}
-            className={`font-mono text-[10.5px] tracking-[0.02em] transition-colors duration-500 ${
+            className={`font-mono text-sm tracking-[0.02em] transition-colors duration-500 ${
               i === active ? "font-semibold text-ink" : "text-muted"
             }`}
           >
@@ -133,38 +128,32 @@ export default function ClaudeSkills() {
         ))}
       </div>
 
-      <div className="mb-14 min-h-[90px] max-w-2xl">
-        <p key={`de-${active}`} className="font-body text-[13.5px] leading-[1.6] text-ink">
-          <span className="mr-2 font-mono text-[10px] text-muted uppercase">
-            DE
-          </span>
+      <div className="mb-16 min-h-[70px] max-w-3xl">
+        <p
+          key={`de-${active}`}
+          className="font-body text-lg leading-[1.6] text-ink"
+        >
           {skills[active].de}
-        </p>
-        <p className="mt-2 font-body text-[13.5px] leading-[1.6] text-muted">
-          <span className="mr-2 font-mono text-[10px] text-muted uppercase">
-            EN
-          </span>
-          {skills[active].en}
         </p>
       </div>
 
       <div>
-        <div className="mb-4 font-mono text-[10.5px] tracking-[0.08em] text-muted uppercase">
+        <div className="mb-5 font-mono text-xs tracking-[0.08em] text-muted uppercase">
           .claude/ — Architecture
         </div>
-        <div className="flex flex-col gap-1.5 font-mono text-[13px]">
+        <div className="flex flex-col gap-2.5 font-mono text-base">
           <div className="text-ink">.claude/</div>
           {folders.map((folder, i) => (
             <div
               key={folder.name}
-              className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 pl-2"
+              className="flex flex-wrap items-baseline gap-x-3 gap-y-1 pl-2"
             >
               <span className="text-muted">
                 {i === folders.length - 1 ? "└──" : "├──"}
               </span>
               <span className="text-accent">{folder.name}</span>
               <span className="text-muted">→</span>
-              <span className="font-body text-[12px] text-muted normal-case">
+              <span className="font-body text-sm text-muted normal-case">
                 {folder.de} · {folder.en}
               </span>
             </div>
