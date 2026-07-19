@@ -4,7 +4,7 @@ export default function Nav() {
       <span className="font-display text-lg font-bold">Latif Kalkan</span>
       <div className="flex items-center gap-7">
         <a
-          href="#cards"
+          href="#experience"
           className="font-mono text-[10.5px] tracking-[0.1em] text-ink uppercase"
         >
           Profil

@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import NavCards from "@/components/NavCards";
+import ResumeCard from "@/components/ResumeCard";
+import Experience from "@/components/Experience";
+import Skills from "@/components/Skills";
+import Education from "@/components/Education";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
 
@@ -20,7 +23,10 @@ export default function Home() {
         />
       </div>
       <Hero />
-      <NavCards />
+      <ResumeCard />
+      <Experience />
+      <Skills />
+      <Education />
       <Projects />
       <Footer />
     </>

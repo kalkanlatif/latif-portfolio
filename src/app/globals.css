@@ -26,10 +26,17 @@
   --font-body: var(--font-inter);
 }
 
+:root {
+  --scroll-bg: var(--color-page);
+  --scroll-fg: var(--color-ink);
+  --scroll-fg-muted: var(--color-muted);
+}
+
 body {
-  background-color: var(--color-page);
+  background-color: var(--scroll-bg);
   color: var(--color-ink);
   font-family: var(--font-body), system-ui, sans-serif;
+  transition: background-color 250ms ease-out;
 }
 
 ::selection {

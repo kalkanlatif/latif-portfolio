@@ -5,10 +5,10 @@ export default function Footer() {
       className="flex flex-wrap items-end justify-between gap-5 border-t border-border px-12 py-9"
     >
       <div>
-        <div className="mb-[5px] font-display text-base font-semibold">
+        <div className="mb-[5px] font-display text-base font-semibold text-[color:var(--scroll-fg)] transition-colors duration-300">
           Latif Kalkan
         </div>
-        <div className="font-mono text-[10.5px] tracking-[0.04em] text-muted">
+        <div className="font-mono text-[10.5px] tracking-[0.04em] text-[color:var(--scroll-fg-muted)] transition-colors duration-300">
           Mannheim, DE
         </div>
       </div>
