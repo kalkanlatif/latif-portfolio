@@ -35,30 +35,43 @@ const experience = [
   {
     company: "Vate GmbH (Photovate)",
     role: "Fachinformatiker-Azubi, Anwendungsentwicklung",
-    period: "seit 09/2025, Mannheim",
-    description:
-      "Photovate (SEFlow) ist eine B2B-SaaS-Plattform für Solarteure — Vertrieb, Angebote, Auftragsabwicklung und mehr, auf Next.js/Supabase-Basis. Eigene Beiträge, produktiv live geschaltet:",
+    period: "seit 09/2025",
+    meta: "Mannheim · B2B-SaaS-Plattform (SEFlow) für Solarteure, Next.js/Supabase-Stack",
     bullets: [
-      "Microsoft-SSO-Integration",
-      "Receipt Automation — OCR- und Zahlungsabgleich-Pipeline",
-      "SNRG-Webhook-Integration (Kontaktsynchronisation SEFlow → SAP)",
-      "Konzeption einer autonomen KI-Agenten-Pipeline für die Softwareentwicklung (Ticket → Implementierung → Review → Merge-Request), inkl. Multi-Agent-Review und mehrstufigem Sicherheitsmodell",
+      "Microsoft-SSO-Integration — produktiv live",
+      "Receipt Automation — OCR- und Zahlungsabgleich-Pipeline — produktiv live",
+      "SNRG-Webhook-Integration — Kontaktsynchronisation SEFlow → SAP",
+      "Konzeption einer autonomen KI-Agenten-Pipeline für die Softwareentwicklung (Ticket → Implementierung → Review → Merge-Request) mit mehrstufigem Sicherheitsmodell",
     ],
   },
   {
-    company: "Liqwotec Systems GmbH, Worms",
+    company: "Liqwotec Systems GmbH",
     role: "Junior Developer",
     period: "11/2024–08/2025",
-    description:
-      "GUI-Design und -Entwicklung mit GTK und C, IPC-Shared-Memory-Programmierung für Systemprozesse, EtherCAT-Protokoll-Integration mit Beckhoff-PLC-Systemen, vollständige Web-Application-Entwicklung (Frontend & Backend).",
-    bullets: [],
+    meta: "Worms · Industrielle Automatisierung / Steuerungstechnik",
+    bullets: [
+      "GUI-Design und -Entwicklung mit GTK und C",
+      "EtherCAT-Protokoll-Integration mit Beckhoff-PLC-Systemen",
+      "IPC-Shared-Memory-Programmierung für Systemprozesse",
+      "Kleine Web-Applikationen-Entwicklung für Internal (Frontend & Backend)",
+    ],
   },
   {
-    company: "Predicom Solutions GmbH, Worms",
+    company: "Predicom Solutions GmbH",
     role: "Junior Developer",
     period: "06/2024–10/2024",
-    description:
-      "Grundlegende Programmierung, Fehlerbehebung und Debugging, Pflege bestehender Software, Entwicklung interner Anwendungen, Mitarbeit an Entwicklungsprojekten.",
+    meta: "Worms · Prozessüberwachung / Sensorlösungen",
+    bullets: [
+      "Grundlegende Programmierung, Fehlerbehebung und Debugging",
+      "Pflege bestehender Software, Entwicklung interner Anwendungen",
+      "Mitarbeit an Planung und Umsetzung von Entwicklungsprojekten",
+    ],
+  },
+  {
+    company: "Süral Resort Hotel, Antalya",
+    role: "Rezeptionist",
+    period: "03/2021–09/2022",
+    meta: "Empfang, Reservierungen, Kundenservice",
     bullets: [],
   },
 ];
@@ -95,7 +108,7 @@ const skillGroups = [
   },
   {
     category: "Tooling",
-    items: ["Bun", "Docker", "Vercel", "Git", "Jira"],
+    items: ["Bun", "Docker", "Vercel", "Git", "Jira", "Gitlab CI/CD", "Slack"],
   },
   {
     category: "KI / Agenten-Workflows",
@@ -109,8 +122,28 @@ const skillGroups = [
   },
   {
     category: "Sonstiges",
-    items: ["GTK", "EtherCAT / PLC-Integration (Beckhoff)"],
+    items: ["GTK", "EtherCAT / PLC-Integration (Beckhoff)", "Linux"],
   },
+];
+
+const languages = [
+  { name: "Deutsch", level: "B2" },
+  { name: "Englisch", level: "C1" },
+  { name: "Türkisch", level: "Muttersprache" },
+  { name: "Kurdisch", level: "Muttersprache" },
+];
+
+const certificates = [
+  "Anthropic — Claude Code 101",
+  "Anthropic — Introduction to Claude Cowork",
+  "Anthropic — Claude Code In Action",
+  "Anthropic — AI Fluency: Framework & Foundations",
+  "Anthropic — Building with the Claude API",
+  "Anthropic — Model Context Protocol (MCP)",
+  "Anthropic — Claude Platform 101",
+  "Coursera — Advanced C Programming Language with Linux Specialization",
+  "BTK Akademi — Python, Cybersicherheit in Linux",
+  "W3Schools — JavaScript, HTML & CSS",
 ];
 
 export default function NavCards() {
@@ -141,8 +174,8 @@ export default function NavCards() {
                 <div className="font-mono text-[10.5px] tracking-[0.04em] text-muted uppercase">
                   {entry.role} · {entry.period}
                 </div>
-                <p className="mt-2 font-body text-[12.5px] leading-[1.5] text-muted">
-                  {entry.description}
+                <p className="mt-1 font-body text-[12px] text-muted italic">
+                  {entry.meta}
                 </p>
                 {entry.bullets.length > 0 && (
                   <ul className="mt-2 list-disc space-y-1 pl-4 font-body text-[12.5px] leading-[1.5] text-muted">
@@ -218,6 +251,34 @@ export default function NavCards() {
                 </div>
               </div>
             ))}
+
+            <div>
+              <div className="mb-2 font-mono text-[10.5px] tracking-[0.08em] text-muted uppercase">
+                Sprachen
+              </div>
+              <div className="flex flex-col gap-1">
+                {languages.map((lang) => (
+                  <div
+                    key={lang.name}
+                    className="flex justify-between font-body text-[12.5px] text-ink"
+                  >
+                    <span>{lang.name}</span>
+                    <span className="text-muted">{lang.level}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="mb-2 font-mono text-[10.5px] tracking-[0.08em] text-muted uppercase">
+                Zertifikate
+              </div>
+              <ul className="list-disc space-y-1 pl-4 font-body text-[12.5px] leading-[1.5] text-muted">
+                {certificates.map((cert) => (
+                  <li key={cert}>{cert}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </Modal>
 
@@ -236,10 +297,32 @@ export default function NavCards() {
             />
           }
         >
-          <p className="font-body text-[12.5px] leading-[1.6] text-muted">
-            Werner-von-Siemens-Schule Mannheim · Fachinformatiker
-            Anwendungsentwicklung · IHK Rhein-Neckar
-          </p>
+          <div className="flex flex-col gap-4">
+            <div>
+              <div className="font-display text-sm font-semibold">
+                Werner-von-Siemens-Schule Mannheim
+              </div>
+              <div className="font-mono text-[10.5px] tracking-[0.04em] text-muted uppercase">
+                seit 09/2025
+              </div>
+              <p className="mt-2 font-body text-[12.5px] leading-[1.5] text-muted">
+                Berufsschule zur Ausbildung Fachinformatiker
+                Anwendungsentwicklung · IHK Rhein-Neckar
+              </p>
+            </div>
+            <div>
+              <div className="font-display text-sm font-semibold">
+                Birecik Atatürk Anadolu Lisesi, Türkei
+              </div>
+              <div className="font-mono text-[10.5px] tracking-[0.04em] text-muted uppercase">
+                2014–2018
+              </div>
+              <p className="mt-2 font-body text-[12.5px] leading-[1.5] text-muted">
+                Allgemeine Hochschulreife (vergleichbar mit
+                Gymnasium/Abitur)
+              </p>
+            </div>
+          </div>
         </Modal>
 
         <Modal
