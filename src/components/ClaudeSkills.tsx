@@ -111,9 +111,13 @@ export default function ClaudeSkills() {
       id="claude-skills"
       className="border-t border-border px-12 pt-10 pb-14"
     >
-      <div className="mb-10 font-display text-3xl font-bold text-accent">
+      <div className="mb-2 font-display text-3xl font-bold text-accent">
         Claude Skills
       </div>
+      <p className="mb-10 max-w-2xl font-body text-sm text-muted">
+        Eigene, selbst entwickelte Claude-Code-Skills für den täglichen
+        Entwicklungsworkflow.
+      </p>
 
       <div className="relative mb-6 h-[3px] w-full bg-border">
         <div
