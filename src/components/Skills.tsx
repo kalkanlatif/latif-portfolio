@@ -113,19 +113,33 @@ export default function Skills() {
         Tech-Stack &amp; Erfahrung
       </div>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-3.5">
-        {skillGroups.map((group) => (
+      <div className="overflow-hidden rounded-card border border-border bg-card">
+        <div className="grid grid-cols-[minmax(160px,220px)_1fr]">
+          <div className="border-b-2 border-accent px-6 py-3">
+            <span className="font-mono text-[10px] tracking-[0.08em] text-accent uppercase">
+              Kategorie
+            </span>
+          </div>
+          <div className="border-b-2 border-accent border-l border-border px-6 py-3">
+            <span className="font-mono text-[10px] tracking-[0.08em] text-accent uppercase">
+              Technologien
+            </span>
+          </div>
+        </div>
+        {skillGroups.map((group, i) => (
           <div
             key={group.category}
-            className="rounded-card border border-border bg-card px-[22px] py-5"
+            className={`grid grid-cols-[minmax(160px,220px)_1fr] transition-colors hover:bg-page ${
+              i !== 0 ? "border-t border-border" : ""
+            }`}
           >
-            <div className="mb-3 flex items-center gap-[9px]">
+            <div className="flex items-center gap-[9px] px-6 py-4">
               {group.icon}
-              <span className="font-display text-[15px] font-semibold">
+              <span className="font-display text-[14px] font-semibold">
                 {group.category}
               </span>
             </div>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap items-center gap-1.5 border-l border-border px-6 py-4">
               {group.items.map((item) => (
                 <TagPill key={item}>{item}</TagPill>
               ))}
