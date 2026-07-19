@@ -1,7 +1,9 @@
 export default function Nav() {
   return (
     <header className="flex items-center justify-between border-b border-border px-12 py-[18px]">
-      <span className="font-display text-lg font-bold">Latif Kalkan</span>
+      <span className="font-display text-xl font-bold text-ink [-webkit-text-stroke:0.6px_currentColor]">
+        Latif Kalkan
+      </span>
       <div className="flex items-center gap-7">
         <a
           href="#experience"
