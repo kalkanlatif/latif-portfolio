@@ -1,4 +1,4 @@
-const SHADES = ["#1c2417", "#22301a", "#3a5c22", "#5fae2c", "#8fdb46", "#d9f7a8"];
+const SHADES = ["#eef2f0", "#d9f7a8", "#8fdb46", "#5fae2c", "#3a8c1f", "#1f5c12"];
 
 const MONTH_LABELS = [
   { name: "Jul", weeks: 2 },
@@ -45,53 +45,46 @@ const activityCells = buildActivityCells();
 
 export default function ActivityGraph() {
   return (
-    <div className="flex-1 overflow-hidden rounded-card bg-card-dark p-6">
-      <div className="mb-5 flex items-center gap-3">
-        <div className="flex h-9 w-9 items-center justify-center rounded-pill bg-accent-bright font-display text-sm font-bold text-card-dark">
+    <div className="max-w-md flex-1 overflow-hidden rounded-card border border-border bg-card p-4">
+      <div className="mb-3 flex items-center gap-2.5">
+        <div className="flex h-7 w-7 items-center justify-center rounded-pill bg-accent font-display text-xs font-bold text-white">
           LK
         </div>
         <div>
-          <div className="font-display text-sm font-semibold text-on-dark">
+          <div className="font-display text-[13px] font-semibold text-ink">
             Latif Kalkan
           </div>
-          <div className="font-mono text-[11px] text-on-dark-muted">
-            @latif
-          </div>
+          <div className="font-mono text-[10px] text-muted">@latif</div>
         </div>
       </div>
 
       <div
         style={{
-          maskImage: "linear-gradient(to right, black 0%, black 45%, transparent 95%)",
+          maskImage:
+            "linear-gradient(to right, transparent 0%, black 55%, black 100%)",
           WebkitMaskImage:
-            "linear-gradient(to right, black 0%, black 45%, transparent 95%)",
+            "linear-gradient(to right, transparent 0%, black 55%, black 100%)",
         }}
       >
-        <div className="mb-1.5 flex pl-[26px]">
+        <div className="mb-1 flex pl-[20px]">
           {MONTH_LABELS.map((m, i) => (
             <span
               key={`${m.name}-${i}`}
               style={{ flex: `${m.weeks} 0 0` }}
-              className="overflow-hidden font-mono text-[10px] text-on-dark-muted"
+              className="overflow-hidden font-mono text-[8.5px] text-muted"
             >
               {m.name}
             </span>
           ))}
         </div>
 
-        <div className="flex gap-2">
-          <div className="flex h-[88px] flex-col justify-between py-0.5">
-            <span className="font-mono text-[9.5px] text-on-dark-muted">
-              M
-            </span>
-            <span className="font-mono text-[9.5px] text-on-dark-muted">
-              W
-            </span>
-            <span className="font-mono text-[9.5px] text-on-dark-muted">
-              F
-            </span>
+        <div className="flex gap-1.5">
+          <div className="flex h-[60px] flex-col justify-between py-0.5">
+            <span className="font-mono text-[8px] text-muted">M</span>
+            <span className="font-mono text-[8px] text-muted">W</span>
+            <span className="font-mono text-[8px] text-muted">F</span>
           </div>
-          <div className="grid flex-1 grid-flow-col grid-rows-7 gap-[3px]">
+          <div className="grid flex-1 grid-flow-col grid-rows-7 gap-[2px]">
             {activityCells.map((color, i) => (
               <div
                 key={i}
@@ -103,20 +96,16 @@ export default function ActivityGraph() {
         </div>
       </div>
 
-      <div className="mt-4 flex items-center gap-1.5">
-        <span className="font-mono text-[9.5px] text-on-dark-muted">
-          Less
-        </span>
+      <div className="mt-2.5 flex items-center gap-1">
+        <span className="font-mono text-[8px] text-muted">Less</span>
         {SHADES.map((color) => (
           <div
             key={color}
-            className="h-2.5 w-2.5 rounded-cell"
+            className="h-1.5 w-1.5 rounded-cell"
             style={{ background: color }}
           />
         ))}
-        <span className="font-mono text-[9.5px] text-on-dark-muted">
-          More
-        </span>
+        <span className="font-mono text-[8px] text-muted">More</span>
       </div>
     </div>
   );
