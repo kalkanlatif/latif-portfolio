@@ -1,5 +1,3 @@
-import PetalCluster from "@/components/PetalCluster";
-
 function TechPill({ children }: { children: string }) {
   return (
     <span className="rounded-pill bg-accent-bright px-3 py-[6px] font-mono text-[10.5px] tracking-[0.02em] text-card-dark">
@@ -159,75 +157,61 @@ export default function Skills() {
         ))}
       </div>
 
-      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <div className="rounded-card border border-border bg-card px-[22px] py-8">
-          <div className="mb-6 text-center font-display text-2xl font-bold text-accent">
-            Sprachen
-          </div>
-          <PetalCluster
-            clusterSize={280}
-            cardSize={80}
-            radius={62}
-            cardClassName="bg-accent-bright"
-            labelClassName="font-display text-base font-bold text-card-dark"
-            detailClassName="bg-card-dark font-mono text-[10px] whitespace-nowrap text-on-dark"
-            petals={languages.map((lang) => ({
-              key: lang.name,
-              label: lang.code,
-              detail: (
-                <>
-                  {lang.name} — {lang.level}
-                </>
-              ),
-            }))}
-          />
+      <div className="mt-10">
+        <div className="mb-4 font-display text-2xl font-bold text-accent">
+          Sprachen
         </div>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-3.5">
+          {languages.map((lang) => (
+            <div
+              key={lang.name}
+              className="rounded-card bg-card-dark px-5 py-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.5)]"
+            >
+              <div className="font-display text-base font-semibold text-on-dark">
+                {lang.name}
+              </div>
+              <div className="mt-1 font-mono text-[11px] tracking-[0.03em] text-accent-bright uppercase">
+                {lang.level}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-        <div className="rounded-card border border-border bg-card px-[22px] py-8">
-          <div className="mb-6 text-center font-display text-2xl font-bold text-accent">
-            Zertifikate
-          </div>
-          <PetalCluster
-            clusterSize={280}
-            cardSize={80}
-            radius={62}
-            cardClassName="bg-accent-bright"
-            labelClassName="flex flex-col items-center gap-0.5"
-            detailClassName="bg-card-dark font-mono text-[9.5px] leading-snug text-on-dark"
-            petals={certificates.map((cert) => ({
-              key: cert.issuer + cert.name,
-              label: (
-                <>
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-card-dark"
-                  >
-                    <circle cx="12" cy="8" r="6" />
-                    <path d="M8.7 13.5 7 22l5-3 5 3-1.7-8.5" />
-                  </svg>
-                  <span className="font-display text-base font-bold text-card-dark">
-                    {cert.issuer[0]}
-                  </span>
-                </>
-              ),
-              detail: (
-                <>
-                  <span className="text-accent-bright">Zertifikat</span>
-                  <br />
+      <div className="mt-8">
+        <div className="mb-4 font-display text-2xl font-bold text-accent">
+          Zertifikate
+        </div>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-3.5">
+          {certificates.map((cert) => (
+            <div
+              key={cert.issuer + cert.name}
+              className="flex items-start gap-3 rounded-card bg-card-dark px-5 py-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.5)]"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#a3e635"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="mt-0.5 shrink-0"
+              >
+                <circle cx="12" cy="8" r="6" />
+                <path d="M8.7 13.5 7 22l5-3 5 3-1.7-8.5" />
+              </svg>
+              <div>
+                <div className="font-mono text-[10px] tracking-[0.06em] text-accent-bright uppercase">
                   {cert.issuer}
-                  <br />
+                </div>
+                <div className="mt-1 font-body text-[13px] leading-[1.4] text-on-dark">
                   {cert.name}
-                </>
-              ),
-            }))}
-          />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
