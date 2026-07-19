@@ -1,4 +1,5 @@
 import LiveClock from "@/components/LiveClock";
+import ResumeCard from "@/components/ResumeCard";
 
 export default function Hero() {
   return (
@@ -61,6 +62,7 @@ export default function Hero() {
           </svg>
           Kontakt
         </a>
+        <ResumeCard />
       </div>
     </section>
   );

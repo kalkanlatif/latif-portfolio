@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import ResumeCard from "@/components/ResumeCard";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
@@ -22,7 +21,6 @@ export default function Home() {
         />
       </div>
       <Hero />
-      <ResumeCard />
       <Experience />
       <Skills />
       <Projects />
