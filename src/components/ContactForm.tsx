@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { submitContactForm } from "@/app/actions/contact";
 
 const schema = z.object({
   name: z.string().min(2, "Bitte Namen angeben"),
@@ -19,29 +21,31 @@ const labelClass =
   "mb-1 block font-mono text-[10.5px] uppercase tracking-[0.06em] text-card-dark";
 
 export default function ContactForm() {
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
-  const onSubmit = (data: FormValues) => {
-    const subject = encodeURIComponent(`Portfolio-Kontakt von ${data.name}`);
-    const body = encodeURIComponent(
-      `${data.message}\n\n— ${data.name} (${data.email})`,
-    );
-    const mailtoUrl = `mailto:kalkanlatif818@gmail.com?subject=${subject}&body=${body}`;
-    // eslint-disable-next-line react-hooks/immutability -- navigation side effect in a submit handler, not a render
-    window.location.href = mailtoUrl;
-    reset();
+  const onSubmit = async (data: FormValues) => {
+    const result = await submitContactForm(data);
+    if (result.success) {
+      setStatus("success");
+      reset();
+    } else {
+      setStatus("error");
+    }
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
       <div>
-        <label className={labelClass}>Name</label>
-        <input {...register("name")} className={fieldClass} />
+        <label htmlFor="contact-name" className={labelClass}>
+          Name
+        </label>
+        <input id="contact-name" {...register("name")} className={fieldClass} />
         {errors.name && (
           <p className="mt-1 font-body text-[11.5px] text-red-600">
             {errors.name.message}
@@ -50,8 +54,15 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className={labelClass}>E-Mail</label>
-        <input type="email" {...register("email")} className={fieldClass} />
+        <label htmlFor="contact-email" className={labelClass}>
+          E-Mail
+        </label>
+        <input
+          id="contact-email"
+          type="email"
+          {...register("email")}
+          className={fieldClass}
+        />
         {errors.email && (
           <p className="mt-1 font-body text-[11.5px] text-red-600">
             {errors.email.message}
@@ -60,8 +71,11 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className={labelClass}>Nachricht</label>
+        <label htmlFor="contact-message" className={labelClass}>
+          Nachricht
+        </label>
         <textarea
+          id="contact-message"
           rows={4}
           {...register("message")}
           className={`${fieldClass} resize-none`}
@@ -75,15 +89,24 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="mt-1 inline-flex items-center justify-center gap-2 rounded-pill bg-card-dark px-6 py-3 font-mono text-[11.5px] uppercase tracking-[0.08em] text-accent-bright transition-all duration-200 hover:-translate-y-0.5 hover:scale-105 hover:bg-[#1c2417] hover:shadow-[0_10px_20px_-6px_rgba(20,31,14,0.5)]"
+        disabled={isSubmitting}
+        className="mt-1 inline-flex items-center justify-center gap-2 rounded-pill bg-card-dark px-6 py-3 font-mono text-[11.5px] uppercase tracking-[0.08em] text-accent-bright transition-all duration-200 hover:-translate-y-0.5 hover:scale-105 hover:bg-[#1c2417] hover:shadow-[0_10px_20px_-6px_rgba(20,31,14,0.5)] disabled:pointer-events-none disabled:opacity-60"
       >
-        Nachricht senden
+        {isSubmitting ? "Wird gesendet …" : "Nachricht senden"}
       </button>
 
-      {isSubmitSuccessful && (
-        <p className="font-body text-[12px] text-card-dark/80">
-          Dein E-Mail-Programm öffnet sich mit der vorausgefüllten
-          Nachricht.
+      {status === "success" && (
+        <p className="font-body text-[12.5px] text-card-dark">
+          Danke! Deine Nachricht wurde gesendet.
+        </p>
+      )}
+      {status === "error" && (
+        <p className="font-body text-[12.5px] text-card-dark">
+          Etwas ist schiefgelaufen. Schreib mir gerne direkt an{" "}
+          <a href="mailto:kalkanlatif818@gmail.com" className="underline">
+            kalkanlatif818@gmail.com
+          </a>
+          .
         </p>
       )}
     </form>
