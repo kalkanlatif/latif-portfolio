@@ -45,7 +45,7 @@ const activityCells = buildActivityCells();
 
 export default function ActivityGraph() {
   return (
-    <div className="max-w-md flex-1 overflow-hidden rounded-card border border-border bg-card p-4">
+    <div className="ml-auto w-full max-w-md overflow-hidden rounded-card border border-border bg-card p-4">
       <div className="mb-3 flex items-center gap-2.5">
         <div className="flex h-7 w-7 items-center justify-center rounded-pill bg-accent font-display text-xs font-bold text-white">
           LK
@@ -107,6 +107,9 @@ export default function ActivityGraph() {
         ))}
         <span className="font-mono text-[8px] text-muted">More</span>
       </div>
+      <p className="mt-1.5 font-mono text-[8px] text-muted">
+        GitLab- und Git-Aktivität — Commits, Merge Requests, Issues.
+      </p>
     </div>
   );
 }
