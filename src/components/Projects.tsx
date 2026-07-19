@@ -33,7 +33,7 @@ export default function Projects() {
       id="projects"
       className="border-t border-border px-12 pt-10 pb-14"
     >
-      <div className="mb-[18px] font-mono text-[10.5px] tracking-[0.12em] text-muted uppercase">
+      <div className="mb-4 font-display text-2xl font-bold text-accent">
         Projekte
       </div>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-3.5">

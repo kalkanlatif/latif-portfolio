@@ -137,7 +137,7 @@ export default function Experience() {
     >
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[40%_40%] lg:gap-x-[20%]">
         <div>
-          <div className="mb-[18px] font-mono text-[10.5px] tracking-[0.12em] text-muted uppercase">
+          <div className="mb-4 font-display text-2xl font-bold text-accent">
             Berufserfahrung
           </div>
           <div className="flex flex-col gap-4">

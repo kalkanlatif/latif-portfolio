@@ -117,7 +117,7 @@ export default function Skills() {
       id="skills"
       className="border-t border-border px-12 pt-10 pb-14"
     >
-      <div className="mb-[18px] font-mono text-[10.5px] tracking-[0.12em] text-muted uppercase">
+      <div className="mb-4 font-display text-2xl font-bold text-accent">
         Kenntnisse
       </div>
 
