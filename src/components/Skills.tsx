@@ -186,7 +186,7 @@ export default function Skills() {
           {certificates.map((cert) => (
             <div
               key={cert.issuer + cert.name}
-              className="flex aspect-square flex-col rounded-card bg-card-dark p-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.5)]"
+              className="flex aspect-square flex-col rounded-card border-[3px] border-[#d4af37] bg-card-dark p-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.5)]"
             >
               <div className="flex flex-1 items-center justify-center">
                 <svg
@@ -194,7 +194,7 @@ export default function Skills() {
                   height="40"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#a3e635"
+                  stroke="#d4af37"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
