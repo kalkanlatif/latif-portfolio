@@ -1,3 +1,5 @@
+import PetalCluster from "@/components/PetalCluster";
+
 function TechPill({ children }: { children: string }) {
   return (
     <span className="rounded-pill bg-accent-bright px-3 py-[6px] font-mono text-[10.5px] tracking-[0.02em] text-card-dark">
@@ -90,23 +92,26 @@ const skillGroups = [
 ];
 
 const languages = [
-  { name: "Deutsch", level: "B2" },
-  { name: "Englisch", level: "C1" },
-  { name: "Türkisch", level: "Muttersprache" },
-  { name: "Kurdisch", level: "Muttersprache" },
+  { code: "DE", name: "Deutsch", level: "B2" },
+  { code: "EN", name: "Englisch", level: "C1" },
+  { code: "TR", name: "Türkisch", level: "Muttersprache" },
+  { code: "KU", name: "Kurdisch", level: "Muttersprache" },
 ];
 
 const certificates = [
-  "Anthropic — Claude Code 101",
-  "Anthropic — Introduction to Claude Cowork",
-  "Anthropic — Claude Code In Action",
-  "Anthropic — AI Fluency: Framework & Foundations",
-  "Anthropic — Building with the Claude API",
-  "Anthropic — Model Context Protocol (MCP)",
-  "Anthropic — Claude Platform 101",
-  "Coursera — Advanced C Programming Language with Linux Specialization",
-  "BTK Akademi — Python, Cybersicherheit in Linux",
-  "W3Schools — JavaScript, HTML & CSS",
+  { issuer: "Anthropic", name: "Claude Code 101" },
+  { issuer: "Anthropic", name: "Introduction to Claude Cowork" },
+  { issuer: "Anthropic", name: "Claude Code In Action" },
+  { issuer: "Anthropic", name: "AI Fluency: Framework & Foundations" },
+  { issuer: "Anthropic", name: "Building with the Claude API" },
+  { issuer: "Anthropic", name: "Model Context Protocol (MCP)" },
+  { issuer: "Anthropic", name: "Claude Platform 101" },
+  {
+    issuer: "Coursera",
+    name: "Advanced C Programming Language with Linux Specialization",
+  },
+  { issuer: "BTK Akademi", name: "Python, Cybersicherheit in Linux" },
+  { issuer: "W3Schools", name: "JavaScript, HTML & CSS" },
 ];
 
 export default function Skills() {
@@ -154,33 +159,75 @@ export default function Skills() {
         ))}
       </div>
 
-      <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-3.5">
-        <div className="rounded-card border border-border bg-card px-[22px] py-5">
-          <div className="mb-3 font-display text-[15px] font-semibold">
+      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="rounded-card border border-border bg-card px-[22px] py-8">
+          <div className="mb-6 text-center font-display text-2xl font-bold text-accent">
             Sprachen
           </div>
-          <div className="flex flex-col gap-1.5">
-            {languages.map((lang) => (
-              <div
-                key={lang.name}
-                className="flex justify-between font-body text-[12.5px] text-ink"
-              >
-                <span>{lang.name}</span>
-                <span className="text-muted">{lang.level}</span>
-              </div>
-            ))}
-          </div>
+          <PetalCluster
+            clusterSize={280}
+            cardSize={80}
+            radius={62}
+            cardClassName="bg-accent-bright"
+            labelClassName="font-display text-base font-bold text-card-dark"
+            detailClassName="bg-card-dark font-mono text-[10px] whitespace-nowrap text-on-dark"
+            petals={languages.map((lang) => ({
+              key: lang.name,
+              label: lang.code,
+              detail: (
+                <>
+                  {lang.name} — {lang.level}
+                </>
+              ),
+            }))}
+          />
         </div>
 
-        <div className="rounded-card border border-border bg-card px-[22px] py-5 sm:col-span-2">
-          <div className="mb-3 font-display text-[15px] font-semibold">
+        <div className="rounded-card border border-border bg-card px-[22px] py-8">
+          <div className="mb-6 text-center font-display text-2xl font-bold text-accent">
             Zertifikate
           </div>
-          <ul className="list-disc space-y-1 pl-4 font-body text-[12.5px] leading-[1.5] text-muted">
-            {certificates.map((cert) => (
-              <li key={cert}>{cert}</li>
-            ))}
-          </ul>
+          <PetalCluster
+            clusterSize={280}
+            cardSize={80}
+            radius={62}
+            cardClassName="bg-accent-bright"
+            labelClassName="flex flex-col items-center gap-0.5"
+            detailClassName="bg-card-dark font-mono text-[9.5px] leading-snug text-on-dark"
+            petals={certificates.map((cert) => ({
+              key: cert.issuer + cert.name,
+              label: (
+                <>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-card-dark"
+                  >
+                    <circle cx="12" cy="8" r="6" />
+                    <path d="M8.7 13.5 7 22l5-3 5 3-1.7-8.5" />
+                  </svg>
+                  <span className="font-display text-base font-bold text-card-dark">
+                    {cert.issuer[0]}
+                  </span>
+                </>
+              ),
+              detail: (
+                <>
+                  <span className="text-accent-bright">Zertifikat</span>
+                  <br />
+                  {cert.issuer}
+                  <br />
+                  {cert.name}
+                </>
+              ),
+            }))}
+          />
         </div>
       </div>
     </section>
