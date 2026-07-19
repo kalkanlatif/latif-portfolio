@@ -276,6 +276,7 @@ export default function NavCards() {
 
         <Modal
           title="Lebenslauf"
+          wide
           trigger={
             <Card
               title="Lebenslauf"
@@ -291,10 +292,47 @@ export default function NavCards() {
             />
           }
         >
-          <p className="font-body text-[12.5px] leading-[1.6] text-muted">
-            PDF-Viewer und Download-Button folgen in einem eigenen
-            Bau-Schritt.
-          </p>
+          <div className="flex flex-col gap-4">
+            <embed
+              src="/cv/Latif_Kalkan_CV.pdf"
+              type="application/pdf"
+              className="h-[65vh] w-full rounded-md border border-border"
+            />
+            <div className="flex items-center justify-between gap-3">
+              <p className="font-body text-[11.5px] text-muted">
+                PDF wird nicht angezeigt?{" "}
+                <a
+                  href="/cv/Latif_Kalkan_CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent"
+                >
+                  In neuem Tab öffnen
+                </a>
+              </p>
+              <a
+                href="/cv/Latif_Kalkan_CV.pdf"
+                download
+                className="inline-flex shrink-0 items-center gap-2 rounded-pill bg-card-dark px-5 py-2.5 font-mono text-[10.5px] uppercase tracking-[0.08em] text-accent-bright transition-colors hover:bg-[#1c2417]"
+              >
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Download
+              </a>
+            </div>
+          </div>
         </Modal>
       </div>
     </section>

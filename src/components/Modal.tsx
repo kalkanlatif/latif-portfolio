@@ -7,17 +7,21 @@ export default function Modal({
   trigger,
   title,
   children,
+  wide = false,
 }: {
   trigger: ReactNode;
   title: string;
   children: ReactNode;
+  wide?: boolean;
 }) {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-40 bg-ink/40" />
-        <Dialog.Content className="fixed top-1/2 left-1/2 z-50 max-h-[85vh] w-[90vw] max-w-lg -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-card border border-border bg-card p-6 focus:outline-none">
+        <Dialog.Content
+          className={`fixed top-1/2 left-1/2 z-50 max-h-[85vh] w-[90vw] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-card border border-border bg-card p-6 focus:outline-none ${wide ? "max-w-2xl" : "max-w-lg"}`}
+        >
           <div className="mb-4 flex items-center justify-between">
             <Dialog.Title className="font-display text-lg font-semibold">
               {title}
