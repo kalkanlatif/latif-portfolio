@@ -8,11 +8,17 @@ export default function Modal({
   title,
   children,
   wide = false,
+  contentClassName = "bg-card",
+  titleClassName = "text-ink",
+  closeClassName = "text-muted",
 }: {
   trigger: ReactNode;
   title: string;
   children: ReactNode;
   wide?: boolean;
+  contentClassName?: string;
+  titleClassName?: string;
+  closeClassName?: string;
 }) {
   return (
     <Dialog.Root>
@@ -20,13 +26,15 @@ export default function Modal({
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-40 bg-ink/40" />
         <Dialog.Content
-          className={`fixed top-1/2 left-1/2 z-50 max-h-[85vh] w-[90vw] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-card border border-border bg-card p-6 focus:outline-none ${wide ? "max-w-2xl" : "max-w-lg"}`}
+          className={`fixed top-1/2 left-1/2 z-50 max-h-[85vh] w-[90vw] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-card border border-border p-6 focus:outline-none ${wide ? "max-w-2xl" : "max-w-lg"} ${contentClassName}`}
         >
           <div className="mb-4 flex items-center justify-between">
-            <Dialog.Title className="font-display text-lg font-semibold">
+            <Dialog.Title
+              className={`font-display text-lg font-semibold ${titleClassName}`}
+            >
               {title}
             </Dialog.Title>
-            <Dialog.Close aria-label="Schließen" className="text-muted">
+            <Dialog.Close aria-label="Schließen" className={closeClassName}>
               <svg
                 width="18"
                 height="18"

@@ -1,5 +1,7 @@
 import LiveClock from "@/components/LiveClock";
 import ResumeCard from "@/components/ResumeCard";
+import Modal from "@/components/Modal";
+import ContactForm from "@/components/ContactForm";
 
 export default function Hero() {
   return (
@@ -44,24 +46,34 @@ export default function Hero() {
           </svg>
           Projekte ansehen ↗
         </a>
-        <a
-          href="#contact"
-          className="inline-flex items-center gap-2 rounded-pill border border-ink px-[26px] py-3 font-mono text-[11.5px] uppercase tracking-[0.08em] text-ink transition-colors hover:bg-ink hover:text-page"
+        <Modal
+          title="Kontakt"
+          contentClassName="bg-accent-bright"
+          titleClassName="text-card-dark"
+          closeClassName="text-card-dark"
+          trigger={
+            <button
+              type="button"
+              className="inline-flex items-center gap-2 rounded-pill border border-ink px-[26px] py-3 font-mono text-[11.5px] uppercase tracking-[0.08em] text-ink transition-colors hover:bg-ink hover:text-page"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4 4h16v13H7l-3 3z" />
+              </svg>
+              Kontakt
+            </button>
+          }
         >
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M4 4h16v13H7l-3 3z" />
-          </svg>
-          Kontakt
-        </a>
+          <ContactForm />
+        </Modal>
         <ResumeCard />
       </div>
     </section>

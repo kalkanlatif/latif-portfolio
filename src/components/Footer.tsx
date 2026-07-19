@@ -1,3 +1,6 @@
+import Modal from "@/components/Modal";
+import ContactForm from "@/components/ContactForm";
+
 export default function Footer() {
   return (
     <footer
@@ -42,12 +45,22 @@ export default function Footer() {
             >
               Tech-Stack
             </a>
-            <a
-              href="#contact"
-              className="text-on-dark-muted transition-colors hover:text-on-dark"
+            <Modal
+              title="Kontakt"
+          contentClassName="bg-accent-bright"
+          titleClassName="text-card-dark"
+          closeClassName="text-card-dark"
+              trigger={
+                <button
+                  type="button"
+                  className="text-left text-on-dark-muted transition-colors hover:text-on-dark"
+                >
+                  Kontakt
+                </button>
+              }
             >
-              Kontakt
-            </a>
+              <ContactForm />
+            </Modal>
           </div>
         </div>
 

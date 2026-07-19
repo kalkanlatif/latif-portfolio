@@ -1,3 +1,6 @@
+import Modal from "@/components/Modal";
+import ContactForm from "@/components/ContactForm";
+
 export default function Nav() {
   return (
     <header className="flex items-center justify-between border-b border-border px-12 py-[18px]">
@@ -17,12 +20,22 @@ export default function Nav() {
         >
           Projekte
         </a>
-        <a
-          href="#contact"
-          className="font-mono text-[10.5px] tracking-[0.1em] text-ink uppercase"
+        <Modal
+          title="Kontakt"
+          contentClassName="bg-accent-bright"
+          titleClassName="text-card-dark"
+          closeClassName="text-card-dark"
+          trigger={
+            <button
+              type="button"
+              className="font-mono text-[10.5px] tracking-[0.1em] text-ink uppercase"
+            >
+              Kontakt
+            </button>
+          }
         >
-          Kontakt
-        </a>
+          <ContactForm />
+        </Modal>
         <a
           href="https://github.com/"
           target="_blank"
