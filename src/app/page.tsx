@@ -24,9 +24,7 @@ export default function Home() {
             priority
           />
           <div className="lg:absolute lg:top-8 lg:right-12 lg:w-full lg:max-w-md">
-            <div className="hidden md:block">
-              <ActivityGraph />
-            </div>
+            <ActivityGraph />
             <AboutBlurb />
           </div>
         </div>
