@@ -1,6 +1,7 @@
 "use server";
 
 import { z } from "zod";
+import { Resend } from "resend";
 import { createClient } from "@/lib/supabase/server";
 
 const schema = z.object({
@@ -15,6 +16,8 @@ export type ContactFormState = {
   success: boolean;
   error?: string;
 };
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function submitContactForm(
   data: ContactInput,
@@ -36,6 +39,18 @@ export async function submitContactForm(
       success: false,
       error: "Nachricht konnte nicht gesendet werden.",
     };
+  }
+
+  try {
+    await resend.emails.send({
+      from: "Portfolio Kontaktformular <onboarding@resend.dev>",
+      to: "kalkanlatif818@gmail.com",
+      replyTo: parsed.data.email,
+      subject: `Neue Nachricht von ${parsed.data.name}`,
+      text: `Name: ${parsed.data.name}\nE-Mail: ${parsed.data.email}\n\n${parsed.data.message}`,
+    });
+  } catch (emailError) {
+    console.error("Resend email send failed:", emailError);
   }
 
   return { success: true };
