@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="border-t border-border bg-card-dark px-12 py-12 text-on-dark"
+      className="border-t border-border bg-card-dark px-5 py-10 text-on-dark sm:px-8 sm:py-12 lg:px-12"
     >
       <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>

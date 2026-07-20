@@ -136,7 +136,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="border-t border-border px-12 pt-10 pb-14"
+      className="border-t border-border px-5 pt-10 pb-14 sm:px-8 lg:px-12"
     >
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[40%_40%] lg:gap-x-[20%]">
         <div>

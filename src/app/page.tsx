@@ -13,18 +13,22 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <div className="relative px-12 pt-8">
-        <Image
-          src="/cover.png"
-          alt="Latif Kalkan"
-          width={220}
-          height={275}
-          className="rounded-card object-cover"
-          priority
-        />
-        <div className="absolute top-8 right-12 w-full max-w-md">
-          <ActivityGraph />
-          <AboutBlurb />
+      <div className="px-5 pt-8 sm:px-8 lg:px-12">
+        <div className="relative flex flex-col gap-6 lg:block">
+          <Image
+            src="/cover.png"
+            alt="Latif Kalkan"
+            width={220}
+            height={275}
+            className="rounded-card object-cover"
+            priority
+          />
+          <div className="lg:absolute lg:top-8 lg:right-12 lg:w-full lg:max-w-md">
+            <div className="hidden md:block">
+              <ActivityGraph />
+            </div>
+            <AboutBlurb />
+          </div>
         </div>
       </div>
       <Hero />

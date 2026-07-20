@@ -109,7 +109,7 @@ export default function ClaudeSkills() {
   return (
     <section
       id="claude-skills"
-      className="border-t border-border px-12 pt-10 pb-14"
+      className="border-t border-border px-5 pt-10 pb-14 sm:px-8 lg:px-12"
     >
       <div className="mb-2 font-display text-3xl font-bold text-accent">
         Claude Skills
@@ -124,32 +124,42 @@ export default function ClaudeSkills() {
           className="absolute top-0 left-0 h-full bg-accent-bright transition-all duration-700 ease-in-out"
           style={{ width: `${progress}%` }}
         />
-        <div className="absolute top-1/2 flex w-full -translate-y-1/2 justify-between">
+        <div className="absolute top-1/2 grid w-full -translate-y-1/2 grid-cols-5">
           {skills.map((skill, i) => {
             const isActive = i === active;
             return (
               <div
                 key={skill.name}
-                className={`h-6 w-6 rounded-full border-[3px] transition-all duration-500 ${
-                  isActive
-                    ? "scale-125 border-accent-bright bg-accent-bright"
-                    : i < active
-                      ? "border-accent-bright bg-accent-bright"
-                      : "border-border bg-page"
+                className={`flex ${
+                  i === 0
+                    ? "justify-start"
+                    : i === skills.length - 1
+                      ? "justify-end"
+                      : "justify-center"
                 }`}
-              />
+              >
+                <div
+                  className={`h-6 w-6 rounded-full border-[3px] transition-all duration-500 ${
+                    isActive
+                      ? "scale-125 border-accent-bright bg-accent-bright"
+                      : i < active
+                        ? "border-accent-bright bg-accent-bright"
+                        : "border-border bg-page"
+                  }`}
+                />
+              </div>
             );
           })}
         </div>
       </div>
 
-      <div className="mb-16 flex justify-between">
+      <div className="mb-16 grid grid-cols-5 gap-1">
         {skills.map((skill, i) => (
           <span
             key={skill.name}
-            className={`font-mono text-sm tracking-[0.02em] transition-colors duration-500 ${
-              i === active ? "font-semibold text-ink" : "text-muted"
-            }`}
+            className={`font-mono text-[9px] leading-tight tracking-[0.02em] transition-colors duration-500 sm:text-sm ${
+              i === 0 ? "text-left" : i === skills.length - 1 ? "text-right" : "text-center"
+            } ${i === active ? "font-semibold text-ink" : "text-muted"}`}
           >
             {skill.name}
           </span>

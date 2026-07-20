@@ -116,14 +116,14 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="border-t border-border px-12 pt-10 pb-14"
+      className="border-t border-border px-5 pt-10 pb-14 sm:px-8 lg:px-12"
     >
       <div className="mb-4 font-display text-2xl font-bold text-accent">
         Tech-Stack &amp; Erfahrung
       </div>
 
       <div className="overflow-hidden rounded-card border border-border bg-[#eaf7dd]">
-        <div className="grid grid-cols-[minmax(160px,220px)_1fr]">
+        <div className="hidden grid-cols-[minmax(160px,220px)_1fr] sm:grid">
           <div className="border-b-2 border-accent px-6 py-3">
             <span className="font-mono text-[10px] tracking-[0.08em] text-ink uppercase">
               Kategorie
@@ -138,17 +138,17 @@ export default function Skills() {
         {skillGroups.map((group, i) => (
           <div
             key={group.category}
-            className={`grid grid-cols-[minmax(160px,220px)_1fr] transition-colors hover:bg-[#dcf2c6] ${
+            className={`grid grid-cols-1 transition-colors hover:bg-[#dcf2c6] sm:grid-cols-[minmax(160px,220px)_1fr] ${
               i !== 0 ? "border-t border-border/60" : ""
             }`}
           >
-            <div className="flex items-center gap-[9px] px-6 py-4">
+            <div className="flex items-center gap-[9px] px-5 py-3 sm:px-6 sm:py-4">
               {group.icon}
               <span className="font-display text-[14px] font-semibold">
                 {group.category}
               </span>
             </div>
-            <div className="flex flex-wrap items-center gap-1.5 border-l border-border/60 px-6 py-4">
+            <div className="flex flex-wrap items-center gap-1.5 px-5 pb-4 sm:border-l sm:border-border/60 sm:px-6 sm:py-4">
               {group.items.map((item) => (
                 <TechPill key={item}>{item}</TechPill>
               ))}
@@ -182,16 +182,15 @@ export default function Skills() {
         <div className="mb-4 font-display text-2xl font-bold text-accent">
           Zertifikate
         </div>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] gap-3.5">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-[repeat(auto-fit,minmax(170px,1fr))] sm:gap-3.5">
           {certificates.map((cert) => (
             <div
               key={cert.issuer + cert.name}
-              className="flex aspect-square flex-col rounded-card border-[3px] border-[#d4af37] bg-card-dark p-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.5)]"
+              className="flex aspect-square flex-col rounded-card border-[3px] border-[#d4af37] bg-card-dark p-3 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.5)] sm:p-4"
             >
               <div className="flex flex-1 items-center justify-center">
                 <svg
-                  width="40"
-                  height="40"
+                  className="h-8 w-8 sm:h-10 sm:w-10"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="#d4af37"
@@ -203,10 +202,10 @@ export default function Skills() {
                   <path d="M8.7 13.5 7 22l5-3 5 3-1.7-8.5" />
                 </svg>
               </div>
-              <div className="font-mono text-[10px] tracking-[0.06em] text-accent-bright uppercase">
+              <div className="font-mono text-[9px] tracking-[0.06em] text-accent-bright uppercase sm:text-[10px]">
                 {cert.issuer}
               </div>
-              <div className="line-clamp-3 font-body text-[13px] leading-[1.4] text-on-dark">
+              <div className="line-clamp-3 font-body text-[11px] leading-[1.35] text-on-dark sm:text-[13px] sm:leading-[1.4]">
                 {cert.name}
               </div>
             </div>

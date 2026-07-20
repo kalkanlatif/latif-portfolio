@@ -3,11 +3,11 @@ import ContactForm from "@/components/ContactForm";
 
 export default function Nav() {
   return (
-    <header className="flex items-center justify-between border-b border-border px-12 py-[18px]">
-      <span className="font-display text-xl font-bold text-ink [-webkit-text-stroke:0.6px_currentColor]">
+    <header className="flex flex-wrap items-center justify-between gap-y-3 border-b border-border px-5 py-4 sm:px-8 sm:py-[18px] lg:px-12">
+      <span className="font-display text-lg font-bold text-ink [-webkit-text-stroke:0.6px_currentColor] sm:text-xl">
         Latif Kalkan
       </span>
-      <div className="flex items-center gap-7">
+      <div className="flex flex-wrap items-center gap-4 sm:gap-7">
         <a
           href="#experience"
           className="font-mono text-[10.5px] tracking-[0.1em] text-ink uppercase"

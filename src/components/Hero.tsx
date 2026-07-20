@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 
 export default function Hero() {
   return (
-    <section className="px-12 pt-[52px] pb-10">
+    <section className="px-5 pt-10 pb-10 sm:px-8 sm:pt-[52px] lg:px-12">
       <div className="mb-[18px]">
         <LiveClock />
       </div>

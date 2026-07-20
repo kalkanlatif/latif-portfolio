@@ -25,7 +25,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="border-t border-border px-12 pt-10 pb-14"
+      className="border-t border-border px-5 pt-10 pb-14 sm:px-8 lg:px-12"
     >
       <div className="mb-4 font-display text-2xl font-bold text-accent">
         Projekte
