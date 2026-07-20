@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono, Inter } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -23,10 +24,42 @@ const inter = Inter({
   display: "swap",
 });
 
+const title = "Latif Kalkan — Portfolio";
+const description =
+  "Portfolio von Latif Kalkan, Fachinformatiker-Azubi Anwendungsentwicklung mit Fokus auf Backend-Entwicklung und KI-Agenten-Workflows.";
+
 export const metadata: Metadata = {
-  title: "Latif Kalkan — Portfolio",
-  description:
-    "Portfolio von Latif Kalkan, Fachinformatiker-Azubi Anwendungsentwicklung.",
+  metadataBase: new URL(SITE_URL),
+  title,
+  description,
+  keywords: [
+    "Latif Kalkan",
+    "Fachinformatiker Anwendungsentwicklung",
+    "Backend Developer",
+    "Next.js",
+    "Supabase",
+    "Claude Code",
+    "Mannheim",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title,
+    description,
+    url: SITE_URL,
+    siteName: title,
+    locale: "de_DE",
+    type: "website",
+    images: [{ url: "/cover.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/cover.png"],
+  },
 };
 
 export default function RootLayout({
