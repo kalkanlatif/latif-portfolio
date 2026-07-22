@@ -21,7 +21,6 @@ const rows: { label: string; value: string; href?: string }[] = [
   {
     label: "GitHub",
     value: "GitHub",
-    href: "https://github.com/",
   },
 ];
 
