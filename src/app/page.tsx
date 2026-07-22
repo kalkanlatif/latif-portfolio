@@ -8,6 +8,7 @@ import Experience from "@/components/Experience";
 import ClaudeCompetency from "@/components/ClaudeCompetency";
 import ClaudeSkills from "@/components/ClaudeSkills";
 import Projects from "@/components/Projects";
+import LanguagesCertificates from "@/components/LanguagesCertificates";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -42,6 +43,7 @@ export default function Home() {
       <ClaudeCompetency />
       <ClaudeSkills />
       <Projects />
+      <LanguagesCertificates />
       <Footer />
     </>
   );
