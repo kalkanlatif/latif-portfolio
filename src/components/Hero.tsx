@@ -19,9 +19,6 @@ export default function Hero() {
         <div className="order-1 grid grid-cols-2 gap-3 sm:contents">
           <Modal
             title="Kontakt"
-            contentClassName="bg-accent-bright"
-            titleClassName="text-card-dark"
-            closeClassName="text-card-dark"
             trigger={
               <button
                 type="button"

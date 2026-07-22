@@ -15,10 +15,10 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 const fieldClass =
-  "w-full rounded-md border border-card-dark/20 bg-white px-3 py-2 font-body text-sm text-ink outline-none transition-colors focus:border-card-dark";
+  "w-full rounded-md border border-border bg-page px-3 py-2 font-body text-sm text-ink outline-none transition-colors focus:border-accent";
 
 const labelClass =
-  "mb-1 block font-mono text-[10.5px] uppercase tracking-[0.06em] text-card-dark";
+  "mb-1 block font-mono text-[10px] uppercase tracking-[0.08em] text-muted";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -90,18 +90,18 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-1 inline-flex items-center justify-center gap-2 rounded-pill bg-card-dark px-6 py-3 font-mono text-[11.5px] uppercase tracking-[0.08em] text-accent-bright transition-all duration-200 hover:-translate-y-0.5 hover:scale-105 hover:bg-[#1c2417] hover:shadow-[0_10px_20px_-6px_rgba(20,31,14,0.5)] disabled:pointer-events-none disabled:opacity-60"
+        className="mt-1 inline-flex items-center justify-center gap-2 rounded-pill bg-card-dark px-6 py-3 font-mono text-[11.5px] uppercase tracking-[0.08em] text-accent-bright transition-colors hover:bg-[#1c2417] disabled:pointer-events-none disabled:opacity-60"
       >
         {isSubmitting ? "Wird gesendet …" : "Nachricht senden"}
       </button>
 
       {status === "success" && (
-        <p className="font-body text-[12.5px] text-card-dark">
+        <p className="font-body text-[12.5px] text-accent">
           Danke! Deine Nachricht wurde gesendet.
         </p>
       )}
       {status === "error" && (
-        <p className="font-body text-[12.5px] text-card-dark">
+        <p className="font-body text-[12.5px] text-muted">
           Etwas ist schiefgelaufen. Schreib mir gerne direkt an{" "}
           <a href="mailto:kalkanlatif818@gmail.com" className="underline">
             kalkanlatif818@gmail.com

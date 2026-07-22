@@ -22,9 +22,6 @@ export default function Nav() {
         </a>
         <Modal
           title="Kontakt"
-          contentClassName="bg-accent-bright"
-          titleClassName="text-card-dark"
-          closeClassName="text-card-dark"
           trigger={
             <button
               type="button"
