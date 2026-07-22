@@ -90,6 +90,7 @@ const experience: {
       "Appointment / Kalender — Termin-Buchung, Microsoft-/Google-Kalendersynchronisation",
       "Context Engineering — eigenständig .claude/-Framework mit Regeln, Glossar und Architektur-Kontext für Team und KI-Agenten aufgebaut (Eigeninitiative)",
       "Konzeption einer autonomen KI-Agenten-Pipeline für die Softwareentwicklung (Ticket → Implementierung → Review → Merge-Request) mit mehrstufigem Sicherheitsmodell",
+      "E2E-Tests mit Cypress — Testergebnisse KI-gestützt mit Claude analysiert",
     ],
     icon: briefcaseIcon,
     badgeClass: "bg-accent-bright text-card-dark",

@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import ActivityGraph from "@/components/ActivityGraph";
 import AboutBlurb from "@/components/AboutBlurb";
+import IdCard from "@/components/IdCard";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import ClaudeSkills from "@/components/ClaudeSkills";
@@ -23,9 +24,16 @@ export default function Home() {
             className="h-[150px] w-[120px] rounded-card object-cover sm:h-[275px] sm:w-[220px]"
             priority
           />
-          <div className="lg:absolute lg:top-8 lg:right-12 lg:w-full lg:max-w-md">
-            <ActivityGraph />
-            <AboutBlurb />
+          <div className="flex flex-col gap-5 lg:absolute lg:top-8 lg:right-12 lg:w-full lg:max-w-lg">
+            <div className="order-1">
+              <IdCard />
+            </div>
+            <div className="order-2 lg:order-3">
+              <AboutBlurb />
+            </div>
+            <div className="order-3 lg:order-2">
+              <ActivityGraph />
+            </div>
           </div>
         </div>
       </div>

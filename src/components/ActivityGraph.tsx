@@ -46,16 +46,16 @@ const activityCells = buildActivityCells();
 export default function ActivityGraph() {
   return (
     <div>
-      <div className="overflow-hidden rounded-card border border-border bg-card p-4 sm:p-4">
-        <div className="mb-3.5 flex items-center gap-2.5 sm:mb-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-pill bg-accent font-display text-xs font-bold text-white sm:h-7 sm:w-7">
+      <div className="overflow-hidden rounded-card border border-border bg-card p-4 lg:p-5">
+        <div className="mb-3.5 flex items-center gap-2.5 lg:mb-4">
+          <div className="flex h-8 w-8 items-center justify-center rounded-pill bg-accent font-display text-xs font-bold text-white lg:h-10 lg:w-10 lg:text-sm">
             LK
           </div>
           <div>
-            <div className="font-display text-sm font-semibold text-ink sm:text-[13px]">
+            <div className="font-display text-sm font-semibold text-ink lg:text-base">
               Latif Kalkan
             </div>
-            <div className="font-mono text-[11px] text-muted sm:text-[10px]">
+            <div className="font-mono text-[11px] text-muted lg:text-xs">
               @latif
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function ActivityGraph() {
 
         <div className="overflow-x-auto">
           <div
-            className="min-w-[420px]"
+            className="min-w-[420px] lg:min-w-[520px]"
             style={{
               maskImage:
                 "linear-gradient(to right, transparent 0%, black 55%, black 100%)",
@@ -71,25 +71,25 @@ export default function ActivityGraph() {
                 "linear-gradient(to right, transparent 0%, black 55%, black 100%)",
             }}
           >
-            <div className="mb-1 flex pl-[20px]">
+            <div className="mb-1 flex pl-[20px] lg:pl-6">
               {MONTH_LABELS.map((m, i) => (
                 <span
                   key={`${m.name}-${i}`}
                   style={{ flex: `${m.weeks} 0 0` }}
-                  className="overflow-hidden font-mono text-[9.5px] text-muted"
+                  className="overflow-hidden font-mono text-[9.5px] text-muted lg:text-[11px]"
                 >
                   {m.name}
                 </span>
               ))}
             </div>
 
-            <div className="flex gap-1.5">
-              <div className="flex h-[68px] flex-col justify-between py-0.5">
-                <span className="font-mono text-[9px] text-muted">M</span>
-                <span className="font-mono text-[9px] text-muted">W</span>
-                <span className="font-mono text-[9px] text-muted">F</span>
+            <div className="flex gap-1.5 lg:gap-2">
+              <div className="flex h-[68px] flex-col justify-between py-0.5 lg:h-20">
+                <span className="font-mono text-[9px] text-muted lg:text-[10px]">M</span>
+                <span className="font-mono text-[9px] text-muted lg:text-[10px]">W</span>
+                <span className="font-mono text-[9px] text-muted lg:text-[10px]">F</span>
               </div>
-              <div className="grid flex-1 grid-flow-col grid-rows-7 gap-[2.5px]">
+              <div className="grid flex-1 grid-flow-col grid-rows-7 gap-[2.5px] lg:gap-[3px]">
                 {activityCells.map((color, i) => (
                   <div
                     key={i}
@@ -102,22 +102,22 @@ export default function ActivityGraph() {
           </div>
         </div>
 
-        <div className="mt-2.5 flex items-center gap-1">
-          <span className="font-mono text-[9px] text-muted sm:text-[8px]">
+        <div className="mt-2.5 flex items-center gap-1 lg:mt-3">
+          <span className="font-mono text-[9px] text-muted lg:text-[10px]">
             Less
           </span>
           {SHADES.map((color) => (
             <div
               key={color}
-              className="h-1.5 w-1.5 rounded-cell"
+              className="h-1.5 w-1.5 rounded-cell lg:h-2 lg:w-2"
               style={{ background: color }}
             />
           ))}
-          <span className="font-mono text-[9px] text-muted sm:text-[8px]">
+          <span className="font-mono text-[9px] text-muted lg:text-[10px]">
             More
           </span>
         </div>
-        <p className="mt-1.5 font-mono text-[9px] text-muted sm:text-[8px]">
+        <p className="mt-1.5 font-mono text-[9px] text-muted lg:text-[10.5px]">
           GitLab- und Git-Aktivität — Commits, Merge Requests, Issues.
         </p>
       </div>

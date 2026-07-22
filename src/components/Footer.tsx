@@ -20,6 +20,9 @@ export default function Footer() {
           <div className="mt-3 font-mono text-[10.5px] tracking-[0.04em] text-on-dark-muted uppercase">
             Mannheim, DE
           </div>
+          <div className="mt-3 font-body text-[11.5px] leading-[1.6] text-on-dark-muted">
+            Vate GmbH (Photovate) · Werner-von-Siemens-Schule Mannheim
+          </div>
         </div>
 
         <div>

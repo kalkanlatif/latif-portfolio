@@ -22,9 +22,13 @@ const skillGroups = [
     category: "Sprachen & Frameworks",
     items: [
       "TypeScript",
+      "JavaScript",
       "Next.js (App Router)",
       "React 19",
       "Tailwind CSS v4",
+      "PHP",
+      "HTML",
+      "CSS",
       "SQL",
       "C",
     ],
@@ -49,7 +53,18 @@ const skillGroups = [
   },
   {
     category: "Tooling",
-    items: ["Bun", "Docker", "Vercel", "Git", "Jira", "Gitlab CI/CD", "Slack"],
+    items: [
+      "Bun",
+      "Docker",
+      "Vercel",
+      "Git",
+      "Jira",
+      "Gitlab CI/CD",
+      "Slack",
+      "Cypress",
+      "Canva",
+      "Figma",
+    ],
     icon: (
       <svg {...iconProps}>
         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z" />
