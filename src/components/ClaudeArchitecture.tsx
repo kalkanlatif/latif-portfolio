@@ -36,7 +36,7 @@ export default function ClaudeArchitecture() {
             </div>
           ))}
         </div>
-        <p className="mt-5 max-w-2xl border-t border-white/10 pt-4 font-body text-[12.5px] leading-[1.6] text-on-dark-muted">
+        <p className="mt-5 max-w-2xl border-t border-white/10 pt-4 font-body text-[12.5px] leading-[1.6] text-accent-bright">
           Diese Struktur nutze ich, weil sie Halluzinationen reduziert und
           Claude über ein ganzes Projekt hinweg konsistent auf demselben
           Kontext arbeiten lässt — und ehrlich gesagt macht es mir einfach

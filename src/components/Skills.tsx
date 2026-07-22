@@ -111,25 +111,29 @@ const languages = [
     code: "DE",
     name: "Deutsch",
     level: "B2",
-    flagBorder: "[border-image:linear-gradient(to_right,#000000,#dd0000,#ffce00)_1]",
+    flagGradient:
+      "linear-gradient(to right, #000000 0%, #000000 33.33%, #dd0000 33.33%, #dd0000 66.66%, #ffce00 66.66%, #ffce00 100%)",
   },
   {
     code: "EN",
     name: "Englisch",
     level: "C1",
-    flagBorder: "[border-image:linear-gradient(to_right,#00247d,#ffffff,#cf142b)_1]",
+    flagGradient:
+      "linear-gradient(to right, #00247d 0%, #00247d 33.33%, #ffffff 33.33%, #ffffff 66.66%, #cf142b 66.66%, #cf142b 100%)",
   },
   {
     code: "TR",
     name: "Türkisch",
     level: "Muttersprache",
-    flagBorder: "[border-image:linear-gradient(to_right,#e30a17,#ffffff)_1]",
+    flagGradient:
+      "linear-gradient(to right, #e30a17 0%, #e30a17 50%, #ffffff 50%, #ffffff 100%)",
   },
   {
     code: "KU",
     name: "Kurdisch",
     level: "Muttersprache",
-    flagBorder: "[border-image:linear-gradient(to_right,#007a3d,#ffce00,#ed1c24)_1]",
+    flagGradient:
+      "linear-gradient(to right, #007a3d 0%, #007a3d 33.33%, #ffce00 33.33%, #ffce00 66.66%, #ed1c24 66.66%, #ed1c24 100%)",
   },
 ];
 
@@ -220,13 +224,16 @@ export default function Skills() {
           {languages.map((lang) => (
             <div
               key={lang.name}
-              className={`rounded-card border-[3px] bg-card px-5 py-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.15)] ${lang.flagBorder}`}
+              className="rounded-card p-[3px] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.15)]"
+              style={{ background: lang.flagGradient }}
             >
-              <div className="font-display text-base font-semibold text-ink">
-                {lang.name}
-              </div>
-              <div className="mt-1 font-mono text-[11px] tracking-[0.03em] text-accent uppercase">
-                {lang.level}
+              <div className="h-full rounded-card bg-card px-5 py-4">
+                <div className="font-display text-base font-semibold text-ink">
+                  {lang.name}
+                </div>
+                <div className="mt-1 font-mono text-[11px] tracking-[0.03em] text-accent uppercase">
+                  {lang.level}
+                </div>
               </div>
             </div>
           ))}

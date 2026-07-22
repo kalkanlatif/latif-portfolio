@@ -17,9 +17,9 @@ export default function ClaudeCompetency() {
       </p>
 
       <div className="flex flex-col gap-10">
+        <ClaudeArchitecture />
         <AiFluency />
         <Skills />
-        <ClaudeArchitecture />
       </div>
     </section>
   );
