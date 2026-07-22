@@ -19,7 +19,7 @@ const competencies = [
 
 export default function AiFluency() {
   return (
-    <section className="border-t border-border px-5 pt-10 pb-6 sm:px-8 lg:px-12">
+    <div>
       <div className="mb-1.5 font-mono text-[10px] tracking-[0.08em] text-muted uppercase">
         Anthropic — AI Fluency Framework
       </div>
@@ -42,6 +42,6 @@ export default function AiFluency() {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

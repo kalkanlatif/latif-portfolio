@@ -7,7 +7,7 @@ export default function Footer() {
       id="contact"
       className="border-t border-border bg-card-dark px-5 py-10 text-on-dark sm:px-8 sm:py-12 lg:px-12"
     >
-      <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
         <div>
           <div className="font-display text-lg font-bold text-on-dark">
             Latif Kalkan
@@ -126,16 +126,6 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-        </div>
-
-        <div>
-          <div className="mb-3 font-mono text-[10px] tracking-[0.08em] text-accent-bright uppercase">
-            Tech-Stack dieser Seite
-          </div>
-          <p className="font-body text-[12.5px] leading-[1.6] text-on-dark-muted">
-            Next.js, TypeScript, Tailwind CSS und Supabase — gebaut mit
-            Claude Code.
-          </p>
         </div>
       </div>
 

@@ -107,10 +107,30 @@ const skillGroups = [
 ];
 
 const languages = [
-  { code: "DE", name: "Deutsch", level: "B2" },
-  { code: "EN", name: "Englisch", level: "C1" },
-  { code: "TR", name: "Türkisch", level: "Muttersprache" },
-  { code: "KU", name: "Kurdisch", level: "Muttersprache" },
+  {
+    code: "DE",
+    name: "Deutsch",
+    level: "B2",
+    flagBorder: "[border-image:linear-gradient(to_right,#000000,#dd0000,#ffce00)_1]",
+  },
+  {
+    code: "EN",
+    name: "Englisch",
+    level: "C1",
+    flagBorder: "[border-image:linear-gradient(to_right,#00247d,#ffffff,#cf142b)_1]",
+  },
+  {
+    code: "TR",
+    name: "Türkisch",
+    level: "Muttersprache",
+    flagBorder: "[border-image:linear-gradient(to_right,#e30a17,#ffffff)_1]",
+  },
+  {
+    code: "KU",
+    name: "Kurdisch",
+    level: "Muttersprache",
+    flagBorder: "[border-image:linear-gradient(to_right,#007a3d,#ffce00,#ed1c24)_1]",
+  },
 ];
 
 const certificates = [
@@ -156,14 +176,7 @@ const certificates = [
 
 export default function Skills() {
   return (
-    <section
-      id="skills"
-      className="px-5 pt-4 pb-14 sm:px-8 lg:px-12"
-    >
-      <div className="mb-4 font-display text-2xl font-bold text-accent">
-        Tech-Stack &amp; Erfahrung
-      </div>
-
+    <div>
       <div className="overflow-hidden rounded-card border border-border bg-[#eaf7dd]">
         <div className="hidden grid-cols-[minmax(160px,220px)_1fr] sm:grid">
           <div className="border-b-2 border-accent px-6 py-3">
@@ -207,7 +220,7 @@ export default function Skills() {
           {languages.map((lang) => (
             <div
               key={lang.name}
-              className="rounded-card border border-border bg-card px-5 py-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.15)]"
+              className={`rounded-card border-[3px] bg-card px-5 py-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.15)] ${lang.flagBorder}`}
             >
               <div className="font-display text-base font-semibold text-ink">
                 {lang.name}
@@ -235,6 +248,6 @@ export default function Skills() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
