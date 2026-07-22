@@ -20,7 +20,7 @@ export default function Home() {
             alt="Latif Kalkan"
             width={220}
             height={275}
-            className="rounded-card object-cover"
+            className="h-[150px] w-[120px] rounded-card object-cover sm:h-[275px] sm:w-[220px]"
             priority
           />
           <div className="lg:absolute lg:top-8 lg:right-12 lg:w-full lg:max-w-md">

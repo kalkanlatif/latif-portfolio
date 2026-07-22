@@ -57,7 +57,7 @@ export default function Nav() {
           </svg>
         </a>
         <a
-          href="https://linkedin.com/"
+          href="https://linkedin.com/in/latif-kalkan-9885802b1"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"

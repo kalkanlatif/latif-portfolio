@@ -46,59 +46,66 @@ const activityCells = buildActivityCells();
 export default function ActivityGraph() {
   return (
     <div>
-      <div className="overflow-hidden rounded-card border border-border bg-card p-4">
-        <div className="mb-3 flex items-center gap-2.5">
-          <div className="flex h-7 w-7 items-center justify-center rounded-pill bg-accent font-display text-xs font-bold text-white">
+      <div className="overflow-hidden rounded-card border border-border bg-card p-4 sm:p-4">
+        <div className="mb-3.5 flex items-center gap-2.5 sm:mb-3">
+          <div className="flex h-8 w-8 items-center justify-center rounded-pill bg-accent font-display text-xs font-bold text-white sm:h-7 sm:w-7">
             LK
           </div>
           <div>
-            <div className="font-display text-[13px] font-semibold text-ink">
+            <div className="font-display text-sm font-semibold text-ink sm:text-[13px]">
               Latif Kalkan
             </div>
-            <div className="font-mono text-[10px] text-muted">@latif</div>
+            <div className="font-mono text-[11px] text-muted sm:text-[10px]">
+              @latif
+            </div>
           </div>
         </div>
 
-        <div
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent 0%, black 55%, black 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, black 55%, black 100%)",
-          }}
-        >
-          <div className="mb-1 flex pl-[20px]">
-            {MONTH_LABELS.map((m, i) => (
-              <span
-                key={`${m.name}-${i}`}
-                style={{ flex: `${m.weeks} 0 0` }}
-                className="overflow-hidden font-mono text-[8.5px] text-muted"
-              >
-                {m.name}
-              </span>
-            ))}
-          </div>
-
-          <div className="flex gap-1.5">
-            <div className="flex h-[60px] flex-col justify-between py-0.5">
-              <span className="font-mono text-[8px] text-muted">M</span>
-              <span className="font-mono text-[8px] text-muted">W</span>
-              <span className="font-mono text-[8px] text-muted">F</span>
-            </div>
-            <div className="grid flex-1 grid-flow-col grid-rows-7 gap-[2px]">
-              {activityCells.map((color, i) => (
-                <div
-                  key={i}
-                  className="aspect-square w-full rounded-cell"
-                  style={{ background: color }}
-                />
+        <div className="overflow-x-auto">
+          <div
+            className="min-w-[420px]"
+            style={{
+              maskImage:
+                "linear-gradient(to right, transparent 0%, black 55%, black 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent 0%, black 55%, black 100%)",
+            }}
+          >
+            <div className="mb-1 flex pl-[20px]">
+              {MONTH_LABELS.map((m, i) => (
+                <span
+                  key={`${m.name}-${i}`}
+                  style={{ flex: `${m.weeks} 0 0` }}
+                  className="overflow-hidden font-mono text-[9.5px] text-muted"
+                >
+                  {m.name}
+                </span>
               ))}
+            </div>
+
+            <div className="flex gap-1.5">
+              <div className="flex h-[68px] flex-col justify-between py-0.5">
+                <span className="font-mono text-[9px] text-muted">M</span>
+                <span className="font-mono text-[9px] text-muted">W</span>
+                <span className="font-mono text-[9px] text-muted">F</span>
+              </div>
+              <div className="grid flex-1 grid-flow-col grid-rows-7 gap-[2.5px]">
+                {activityCells.map((color, i) => (
+                  <div
+                    key={i}
+                    className="aspect-square w-full rounded-cell"
+                    style={{ background: color }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
         <div className="mt-2.5 flex items-center gap-1">
-          <span className="font-mono text-[8px] text-muted">Less</span>
+          <span className="font-mono text-[9px] text-muted sm:text-[8px]">
+            Less
+          </span>
           {SHADES.map((color) => (
             <div
               key={color}
@@ -106,9 +113,11 @@ export default function ActivityGraph() {
               style={{ background: color }}
             />
           ))}
-          <span className="font-mono text-[8px] text-muted">More</span>
+          <span className="font-mono text-[9px] text-muted sm:text-[8px]">
+            More
+          </span>
         </div>
-        <p className="mt-1.5 font-mono text-[8px] text-muted">
+        <p className="mt-1.5 font-mono text-[9px] text-muted sm:text-[8px]">
           GitLab- und Git-Aktivität — Commits, Merge Requests, Issues.
         </p>
       </div>

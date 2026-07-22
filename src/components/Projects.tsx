@@ -36,13 +36,13 @@ export default function Projects() {
             key={project.name}
             className="overflow-hidden rounded-card border border-border bg-card"
           >
-            <div className="flex h-[90px] items-center justify-center bg-card-dark">
+            <div className="flex h-[90px] items-center justify-center bg-[#eaf7dd]">
               <svg
                 width="26"
                 height="26"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#a3e635"
+                stroke="#437d1f"
                 strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
