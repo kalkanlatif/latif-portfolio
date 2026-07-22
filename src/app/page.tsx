@@ -26,7 +26,7 @@ export default function Home() {
             className="h-[150px] w-[120px] rounded-card object-cover sm:h-[275px] sm:w-[220px]"
             priority
           />
-          <div className="flex flex-col gap-5 lg:ml-auto lg:max-w-lg">
+          <div className="flex flex-col gap-5 lg:max-w-lg">
             <div className="order-1">
               <AusbildungBanner />
             </div>

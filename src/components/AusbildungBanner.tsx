@@ -1,6 +1,6 @@
 export default function AusbildungBanner() {
   return (
-    <div className="rounded-card border-2 border-[#f97316] bg-[#ffd400] px-4 py-3.5">
+    <div className="rounded-card border-2 border-[#f97316] bg-[#ffeb3b] px-4 py-3.5">
       <div className="mb-1.5 flex items-center gap-2">
         <svg
           width="15"
@@ -22,9 +22,15 @@ export default function AusbildungBanner() {
       </div>
       <p className="font-body text-[12.5px] leading-[1.5] text-[#451a03]">
         Diese Seite dient Arbeitgebern als Referenz zu meinem Werdegang und
-        aktuellen Stand: Ich suche ab sofort eine neue Ausbildungsstelle, um
-        meine Ausbildung zum Fachinformatiker für Anwendungsentwicklung ab
-        dem 2. Lehrjahr fortzusetzen.
+        aktuellen Stand: Ich suche{" "}
+        <span className="bg-[#451a03] px-1 py-0.5 font-semibold text-[#ffeb3b]">
+          ab sofort eine neue Ausbildungsstelle
+        </span>
+        , um meine Ausbildung zum Fachinformatiker für Anwendungsentwicklung{" "}
+        <span className="bg-[#451a03] px-1 py-0.5 font-semibold text-[#ffeb3b]">
+          ab dem 2. Lehrjahr
+        </span>{" "}
+        fortzusetzen.
       </p>
     </div>
   );
