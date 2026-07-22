@@ -1,3 +1,5 @@
+import CertificateCard from "@/components/CertificateCard";
+
 function TechPill({ children }: { children: string }) {
   return (
     <span className="rounded-pill bg-accent-bright px-3 py-[6px] font-mono text-[10.5px] tracking-[0.02em] text-card-dark">
@@ -112,18 +114,43 @@ const languages = [
 ];
 
 const certificates = [
-  { issuer: "Anthropic", name: "AI Fluency: Framework & Foundations" },
+  {
+    issuer: "Anthropic",
+    name: "AI Fluency: Framework & Foundations",
+    image: "/certificates/ai-fluency.png",
+  },
   {
     issuer: "Coursera",
-    name: "Advanced C Programming Language with Linux Specialization",
+    name: "C Programming: Getting Started",
+    image: "/certificates/coursera-c-programming.png",
   },
   { issuer: "Anthropic", name: "Model Context Protocol (MCP)" },
   { issuer: "Anthropic", name: "Building with the Claude API" },
-  { issuer: "Anthropic", name: "Claude Code In Action" },
-  { issuer: "Anthropic", name: "Claude Platform 101" },
-  { issuer: "Anthropic", name: "Claude Code 101" },
-  { issuer: "Anthropic", name: "Introduction to Claude Cowork" },
-  { issuer: "BTK Akademi", name: "Python, Cybersicherheit in Linux" },
+  {
+    issuer: "Anthropic",
+    name: "Claude Code In Action",
+    image: "/certificates/claude-code-in-action.png",
+  },
+  {
+    issuer: "Anthropic",
+    name: "Claude 101",
+    image: "/certificates/claude-101.png",
+  },
+  {
+    issuer: "Anthropic",
+    name: "Claude Code 101",
+    image: "/certificates/claude-code-101.png",
+  },
+  {
+    issuer: "Anthropic",
+    name: "Introduction to Claude Cowork",
+    image: "/certificates/claude-cowork.png",
+  },
+  {
+    issuer: "BTK Akademi",
+    name: "Python-Programmierung – Einsteiger bis Fortgeschritten",
+    image: "/certificates/btk-python.png",
+  },
   { issuer: "W3Schools", name: "JavaScript, HTML & CSS" },
 ];
 
@@ -131,7 +158,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="border-t border-border px-5 pt-10 pb-14 sm:px-8 lg:px-12"
+      className="px-5 pt-4 pb-14 sm:px-8 lg:px-12"
     >
       <div className="mb-4 font-display text-2xl font-bold text-accent">
         Tech-Stack &amp; Erfahrung
@@ -199,34 +226,12 @@ export default function Skills() {
         </div>
         <div className="grid grid-cols-3 gap-2 sm:grid-cols-[repeat(auto-fit,minmax(170px,1fr))] sm:gap-3.5">
           {certificates.map((cert) => (
-            <div
+            <CertificateCard
               key={cert.issuer + cert.name}
-              className="flex aspect-square flex-col rounded-card border-2 border-[#d4af37] bg-card-dark p-2 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_14px_28px_-10px_rgba(20,31,14,0.5)] sm:border-[3px] sm:p-4"
-            >
-              <div className="flex flex-1 items-center justify-center">
-                <svg
-                  className="h-5 w-5 sm:h-10 sm:w-10"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#d4af37"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="8" r="6" />
-                  <path d="M8.7 13.5 7 22l5-3 5 3-1.7-8.5" />
-                </svg>
-              </div>
-              <div className="font-mono text-[6.5px] tracking-[0.06em] text-[#d4af37]/80 uppercase sm:text-[9px]">
-                Certificate
-              </div>
-              <div className="font-mono text-[7px] tracking-[0.06em] text-accent-bright uppercase sm:text-[10px]">
-                {cert.issuer}
-              </div>
-              <div className="line-clamp-3 font-body text-[8.5px] leading-[1.25] text-on-dark sm:text-[13px] sm:leading-[1.4]">
-                {cert.name}
-              </div>
-            </div>
+              issuer={cert.issuer}
+              name={cert.name}
+              image={cert.image}
+            />
           ))}
         </div>
       </div>
