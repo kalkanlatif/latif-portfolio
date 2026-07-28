@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 
 export default function Hero() {
   return (
-    <section className="px-5 pt-10 pb-10 sm:px-8 sm:pt-[52px] lg:px-12">
+    <div className="pt-8 pb-10 lg:pt-6">
       <h1 className="mb-4 max-w-3xl font-display text-[clamp(36px,5vw,58px)] leading-[1.06] font-bold tracking-[-0.02em]">
         Code, der funktioniert. <span className="text-accent">Agenten</span>, die
         mitdenken.
@@ -66,6 +66,6 @@ export default function Hero() {
           Hobbyprojekte ansehen ↗
         </a>
       </div>
-    </section>
+    </div>
   );
 }
