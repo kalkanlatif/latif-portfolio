@@ -11,8 +11,17 @@ export default function ClaudeCompetency() {
       <Skills />
 
       <div className="mt-10">
-        <div className="mb-2 font-display text-2xl font-bold text-accent">
-          Claude-Kompetenz
+        <div className="mb-2 flex items-center gap-2.5">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/claude.svg"
+            alt=""
+            width={26}
+            height={26}
+          />
+          <span className="font-display text-2xl font-bold text-accent">
+            Claude-Kompetenz
+          </span>
         </div>
         <p className="mb-8 max-w-2xl font-body text-[13px] leading-[1.5] text-muted">
           So setze ich Claude in der Praxis ein — von den
