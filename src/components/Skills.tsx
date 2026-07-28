@@ -1,6 +1,16 @@
-function TechPill({ name, logo }: { name: string; logo?: string }) {
+function TechPill({
+  name,
+  logo,
+  bold,
+}: {
+  name: string;
+  logo?: string;
+  bold?: boolean;
+}) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-pill bg-accent-bright py-[6px] pr-3.5 pl-2 font-mono text-[10.5px] tracking-[0.02em] text-card-dark">
+    <span
+      className={`inline-flex items-center gap-2 rounded-pill bg-accent-bright py-[6px] pr-3.5 pl-2 font-mono text-[10.5px] tracking-[0.02em] text-card-dark ${bold ? "font-bold" : ""}`}
+    >
       {logo && (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -108,6 +118,7 @@ const skillGroups = [
       { name: "GTK", logo: "gtk" },
       { name: "EtherCAT / PLC-Integration (Beckhoff)" },
       { name: "Linux", logo: "linux" },
+      { name: "IntiAS", bold: true },
     ],
     icon: (
       <svg {...iconProps}>
@@ -156,7 +167,12 @@ export default function Skills() {
             </div>
             <div className="flex flex-wrap items-center gap-1.5 px-5 pb-4 sm:border-l sm:border-border/60 sm:px-6 sm:py-4">
               {group.items.map((item) => (
-                <TechPill key={item.name} name={item.name} logo={item.logo} />
+                <TechPill
+                  key={item.name}
+                  name={item.name}
+                  logo={item.logo}
+                  bold={item.bold}
+                />
               ))}
             </div>
           </div>
