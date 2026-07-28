@@ -1,5 +1,14 @@
 import TagPill from "@/components/TagPill";
 
+const tagLogos: Record<string, string> = {
+  "Next.js": "nextdotjs",
+  Supabase: "supabase",
+  Vercel: "vercel",
+  Docker: "docker",
+  "GitHub Actions": "githubactions",
+  "Anthropic AI SDK": "anthropic",
+};
+
 const projects = [
   {
     name: "Kalkan Stundenzettel",
@@ -60,7 +69,9 @@ export default function Projects() {
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {project.tags.map((tag) => (
-                  <TagPill key={tag}>{tag}</TagPill>
+                  <TagPill key={tag} logo={tagLogos[tag]}>
+                    {tag}
+                  </TagPill>
                 ))}
               </div>
             </div>
