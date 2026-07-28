@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono, Inter } from "next/font/google";
 import { SITE_URL } from "@/lib/site";
+import ScrollToTop from "@/components/ScrollToTop";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -70,6 +71,7 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} ${inter.variable} antialiased`}
       >
+        <ScrollToTop />
         {children}
       </body>
     </html>

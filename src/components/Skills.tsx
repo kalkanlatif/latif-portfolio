@@ -1,7 +1,17 @@
-function TechPill({ children }: { children: string }) {
+function TechPill({ name, logo }: { name: string; logo?: string }) {
   return (
-    <span className="rounded-pill bg-accent-bright px-3 py-[6px] font-mono text-[10.5px] tracking-[0.02em] text-card-dark">
-      {children}
+    <span className="inline-flex items-center gap-1.5 rounded-pill bg-accent-bright px-3 py-[6px] font-mono text-[10.5px] tracking-[0.02em] text-card-dark">
+      {logo && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${logo}.svg`}
+          alt=""
+          width={13}
+          height={13}
+          className="shrink-0"
+        />
+      )}
+      {name}
     </span>
   );
 }
@@ -21,16 +31,16 @@ const skillGroups = [
   {
     category: "Sprachen & Frameworks",
     items: [
-      "TypeScript",
-      "JavaScript",
-      "Next.js (App Router)",
-      "React 19",
-      "Tailwind CSS v4",
-      "PHP",
-      "HTML",
-      "CSS",
-      "SQL",
-      "C",
+      { name: "TypeScript", logo: "typescript" },
+      { name: "JavaScript", logo: "javascript" },
+      { name: "Next.js (App Router)", logo: "nextdotjs" },
+      { name: "React 19", logo: "react" },
+      { name: "Tailwind CSS v4", logo: "tailwindcss" },
+      { name: "PHP", logo: "php" },
+      { name: "HTML", logo: "html5" },
+      { name: "CSS", logo: "css3" },
+      { name: "SQL" },
+      { name: "C", logo: "c" },
     ],
     icon: (
       <svg {...iconProps}>
@@ -41,7 +51,11 @@ const skillGroups = [
   },
   {
     category: "Backend & Daten",
-    items: ["Supabase", "PostgreSQL", "Row Level Security"],
+    items: [
+      { name: "Supabase", logo: "supabase" },
+      { name: "PostgreSQL", logo: "postgresql" },
+      { name: "Row Level Security" },
+    ],
     icon: (
       <svg {...iconProps}>
         <rect x="2" y="3" width="20" height="7" rx="1" />
@@ -54,16 +68,16 @@ const skillGroups = [
   {
     category: "Tooling",
     items: [
-      "Bun",
-      "Docker",
-      "Vercel",
-      "Git",
-      "Jira",
-      "Gitlab CI/CD",
-      "Slack",
-      "Cypress",
-      "Canva",
-      "Figma",
+      { name: "Bun", logo: "bun" },
+      { name: "Docker", logo: "docker" },
+      { name: "Vercel", logo: "vercel" },
+      { name: "Git", logo: "git" },
+      { name: "Jira", logo: "jira" },
+      { name: "Gitlab CI/CD", logo: "gitlab" },
+      { name: "Slack", logo: "slack" },
+      { name: "Cypress", logo: "cypress" },
+      { name: "Canva", logo: "canva" },
+      { name: "Figma", logo: "figma" },
     ],
     icon: (
       <svg {...iconProps}>
@@ -74,11 +88,11 @@ const skillGroups = [
   {
     category: "KI / Agenten-Workflows",
     items: [
-      "Anthropic AI SDK",
-      "Claude Code",
-      "MCP (Model Context Protocol)",
-      "Multi-Agent-Pipelines",
-      "Context Engineering",
+      { name: "Anthropic AI SDK", logo: "anthropic" },
+      { name: "Claude Code", logo: "claude" },
+      { name: "MCP (Model Context Protocol)" },
+      { name: "Multi-Agent-Pipelines" },
+      { name: "Context Engineering" },
     ],
     icon: (
       <svg {...iconProps}>
@@ -90,7 +104,11 @@ const skillGroups = [
   },
   {
     category: "Sonstiges",
-    items: ["GTK", "EtherCAT / PLC-Integration (Beckhoff)", "Linux"],
+    items: [
+      { name: "GTK", logo: "gtk" },
+      { name: "EtherCAT / PLC-Integration (Beckhoff)" },
+      { name: "Linux", logo: "linux" },
+    ],
     icon: (
       <svg {...iconProps}>
         <rect x="4" y="4" width="16" height="16" rx="2" />
@@ -107,6 +125,9 @@ const skillGroups = [
 export default function Skills() {
   return (
     <div>
+      <div className="mb-4 font-display text-2xl font-bold text-accent">
+        Werkzeuge &amp; Technologien
+      </div>
       <div className="overflow-hidden rounded-card border border-border bg-[#eaf7dd]">
         <div className="hidden grid-cols-[minmax(160px,220px)_1fr] sm:grid">
           <div className="border-b-2 border-accent px-6 py-3">
@@ -135,7 +156,7 @@ export default function Skills() {
             </div>
             <div className="flex flex-wrap items-center gap-1.5 px-5 pb-4 sm:border-l sm:border-border/60 sm:px-6 sm:py-4">
               {group.items.map((item) => (
-                <TechPill key={item}>{item}</TechPill>
+                <TechPill key={item.name} name={item.name} logo={item.logo} />
               ))}
             </div>
           </div>
