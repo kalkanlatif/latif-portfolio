@@ -9,7 +9,7 @@ const iconProps = {
   strokeLinejoin: "round" as const,
 };
 
-const competencies = [
+export const competencies = [
   {
     name: "Delegation",
     de: "Entscheiden, ob, wann und wie KI eingesetzt wird.",

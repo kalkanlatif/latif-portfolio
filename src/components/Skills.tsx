@@ -37,7 +37,7 @@ const iconProps = {
   strokeLinejoin: "round" as const,
 };
 
-const skillGroups = [
+export const skillGroups = [
   {
     category: "Sprachen & Frameworks",
     items: [

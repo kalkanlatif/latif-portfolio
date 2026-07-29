@@ -1,6 +1,6 @@
 import CertificateCard from "@/components/CertificateCard";
 
-const languages = [
+export const languages = [
   {
     code: "DE",
     name: "Deutsch",
@@ -31,7 +31,7 @@ const languages = [
   },
 ];
 
-const certificates = [
+export const certificates = [
   {
     issuer: "Anthropic",
     name: "AI Fluency: Framework & Foundations",

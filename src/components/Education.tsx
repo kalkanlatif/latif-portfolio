@@ -14,7 +14,7 @@ const graduationCapIcon = (
   </svg>
 );
 
-const education: {
+export const education: {
   school: string;
   period: string;
   meta: string;

@@ -68,7 +68,7 @@ const bellIcon = (
   </svg>
 );
 
-const experience: {
+export const experience: {
   company: string;
   role: string;
   period: string;
