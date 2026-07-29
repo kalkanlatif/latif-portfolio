@@ -111,9 +111,13 @@ export default function Projects() {
       id="projects"
       className="border-t border-border px-5 pt-10 pb-14 sm:px-8 lg:px-12"
     >
-      <div className="mb-4 font-display text-2xl font-bold text-accent">
+      <div className="mb-2 font-display text-2xl font-bold text-accent">
         Projekte
       </div>
+      <p className="mb-4 max-w-2xl font-body text-[13px] leading-[1.5] text-muted">
+        Eigene Hobbyprojekte, die ich neben Job und Ausbildung in meiner
+        Freizeit entwickelt habe.
+      </p>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-3.5">
         {projects.map((project) => (
           <div

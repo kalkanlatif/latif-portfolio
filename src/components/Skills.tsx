@@ -136,9 +136,14 @@ const skillGroups = [
 export default function Skills() {
   return (
     <div>
-      <div className="mb-4 font-display text-2xl font-bold text-accent">
+      <div className="mb-2 font-display text-2xl font-bold text-accent">
         Werkzeuge &amp; Technologien
       </div>
+      <p className="mb-4 max-w-2xl font-body text-[13px] leading-[1.5] text-muted">
+        Diese Sprachen, Frameworks und Tools kenne ich nicht nur vom Namen —
+        ich habe damit produktiv gearbeitet und praktische Erfahrung
+        gesammelt.
+      </p>
       <div className="overflow-hidden rounded-card border border-border bg-[#eaf7dd]">
         <div className="hidden grid-cols-[minmax(160px,220px)_1fr] sm:grid">
           <div className="border-b-2 border-accent px-6 py-3">
