@@ -98,9 +98,13 @@ export default function LanguagesCertificates() {
       </div>
 
       <div className="mt-8">
-        <div className="mb-4 font-display text-2xl font-bold text-accent">
+        <div className="mb-2 font-display text-2xl font-bold text-accent">
           Zertifikate
         </div>
+        <p className="mb-4 max-w-2xl font-body text-[13px] leading-[1.5] text-muted">
+          Online-Kurse, die ich außerhalb des Jobs in meiner Freizeit
+          gemacht habe, um mich selbst weiterzubilden.
+        </p>
         <div className="grid grid-cols-3 gap-2 sm:grid-cols-[repeat(auto-fit,minmax(170px,1fr))] sm:gap-3.5">
           {certificates.map((cert) => (
             <CertificateCard
