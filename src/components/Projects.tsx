@@ -1,6 +1,6 @@
 import TagPill from "@/components/TagPill";
 
-const tagLogos: Record<string, string> = {
+export const tagLogos: Record<string, string> = {
   "Next.js": "nextdotjs",
   Supabase: "supabase",
   Vercel: "vercel",
@@ -60,7 +60,7 @@ const migrantCompassIcon = (
   </svg>
 );
 
-const projects = [
+export const projects = [
   {
     name: "Kalkan Stundenzettel",
     description:
