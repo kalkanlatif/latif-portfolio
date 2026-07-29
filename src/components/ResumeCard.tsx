@@ -31,28 +31,39 @@ export default function ResumeCard() {
         </button>
       }
     >
-      <div className="flex flex-col gap-4">
-        <embed
-          src="/cv/Latif_Kalkan_CV.pdf"
-          type="application/pdf"
-          className="h-[65vh] w-full rounded-md border border-border"
-        />
-        <div className="flex items-center justify-between gap-3">
-          <p className="font-body text-[11.5px] text-muted">
-            PDF wird nicht angezeigt?{" "}
-            <a
-              href="/cv/Latif_Kalkan_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent"
-            >
-              In neuem Tab öffnen
-            </a>
-          </p>
+      <div className="flex flex-col items-center gap-5 rounded-card border border-border bg-page px-6 py-10 text-center">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-accent"
+        >
+          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="8" y1="13" x2="16" y2="13" />
+          <line x1="8" y1="17" x2="16" y2="17" />
+        </svg>
+        <p className="font-body text-[12.5px] text-muted">
+          Latif_Kalkan_CV.pdf
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="/cv/Latif_Kalkan_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-pill border border-border bg-card px-5 py-2.5 font-mono text-[10.5px] uppercase tracking-[0.08em] text-ink transition-colors hover:bg-page"
+          >
+            In neuem Tab öffnen
+          </a>
           <a
             href="/cv/Latif_Kalkan_CV.pdf"
             download
-            className="inline-flex shrink-0 items-center gap-2 rounded-pill bg-card-dark px-5 py-2.5 font-mono text-[10.5px] uppercase tracking-[0.08em] text-accent-bright transition-colors hover:bg-[#1c2417]"
+            className="inline-flex items-center gap-2 rounded-pill bg-card-dark px-5 py-2.5 font-mono text-[10.5px] uppercase tracking-[0.08em] text-accent-bright transition-colors hover:bg-[#1c2417]"
           >
             <svg
               width="13"
