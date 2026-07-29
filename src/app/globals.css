@@ -29,11 +29,11 @@
 body {
   background-color: var(--color-page);
   background-image:
-    radial-gradient(ellipse 1300px 900px at 100% 0%, rgba(163, 230, 53, 0.22) 0%, transparent 60%),
-    radial-gradient(ellipse 1300px 1000px at 0% 22%, rgba(95, 174, 44, 0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 1300px 1000px at 100% 48%, rgba(163, 230, 53, 0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 1300px 1000px at 0% 74%, rgba(95, 174, 44, 0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 1300px 900px at 100% 100%, rgba(163, 230, 53, 0.2) 0%, transparent 60%);
+    radial-gradient(ellipse 2000px 1100px at 50% 0%, rgba(163, 230, 53, 0.7) 0%, rgba(163, 230, 53, 0.3) 40%, transparent 72%),
+    radial-gradient(ellipse 1300px 1000px at 0% 22%, rgba(95, 174, 44, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 1300px 1000px at 100% 48%, rgba(163, 230, 53, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 1300px 1000px at 0% 74%, rgba(95, 174, 44, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 1300px 900px at 100% 100%, rgba(163, 230, 53, 0.22) 0%, transparent 60%);
   background-repeat: no-repeat;
   color: var(--color-ink);
   font-family: var(--font-body), system-ui, sans-serif;
