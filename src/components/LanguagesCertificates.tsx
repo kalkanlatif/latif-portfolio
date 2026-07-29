@@ -75,9 +75,12 @@ export const certificates = [
 export default function LanguagesCertificates() {
   return (
     <section className="border-t border-border px-5 pt-10 pb-14 sm:px-8 lg:px-12">
-      <div className="mb-4 font-display text-2xl font-bold text-accent">
+      <div className="mb-2 font-display text-2xl font-bold text-accent">
         Sprachen
       </div>
+      <p className="mb-4 max-w-2xl font-body text-[13px] leading-[1.5] text-muted">
+        Diese Sprachen spreche ich im Alltag und im Arbeitskontext.
+      </p>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-3.5">
         {languages.map((lang) => (
           <div

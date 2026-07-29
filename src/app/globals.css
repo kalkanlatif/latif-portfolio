@@ -43,3 +43,11 @@ body {
   background-color: var(--color-card-dark);
   color: var(--color-accent-bright);
 }
+
+/* Lebenslauf-PDF: alle <details> immer aufgeklappt anzeigen (kein Hover/Klick im PDF) */
+.force-open details:not([open]) > *:not(summary) {
+  display: block !important;
+}
+.force-open summary > svg {
+  display: none;
+}
